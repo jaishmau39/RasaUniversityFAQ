@@ -8,9 +8,13 @@ from datetime import date
 
 from typing import Any, Text, Dict, List
 #
+
+# Python program to read an excel file
+
 import pandas as pd
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+
 #
 #
 # class ActionHelloWorld(Action):
@@ -51,7 +55,7 @@ class DisplayUpcomingHolidays(Action):
         today = date.today()
         print("Today's date:", today)
         this_month = today.strftime("%m")
-        df2 = pd.read_excel('Calender_2022.xlsx')
+        df2 = pd.read_excel(r'Calender_2022.xlsx')
         df2['Date'] = pd.to_datetime(df2['Date'])
         current_month_df = df2[df2['Date'].dt.month == int(this_month)]
         content = 'Total of ' + str(current_month_df.shape[0]) + ' this month\n\n'
