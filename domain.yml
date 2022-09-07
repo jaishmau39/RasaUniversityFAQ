@@ -10,6 +10,8 @@ intents:
   - bot_challenge
   - check_upcoming_holidays
   - check_admission_info
+  - campus_facilities
+  - latest_events
 
 responses:
   utter_greet:
@@ -34,9 +36,19 @@ responses:
   utter_admission_info:
   - text: "The admission for 2023 will happen in September."
 
+  utter_campus_facilities:
+#    - text: "Lakehead University has two main campus locations in Thunder Bay and Orillia.
+#            Select the campus to know more information about it."
+     - text: "Click on the link provided below to learn more about the facilities provided by lakehead university to its students [ ]{link}"
+
+  utter_latest_events:
+  - text: "What would you like know about Lakehead University today?"
+
 actions:
 - action_admission_info
 - display_upcoming_holidays
+- action_campus_facilities
+- action_latest_events
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

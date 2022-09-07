@@ -15,6 +15,11 @@ import pandas as pd
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
+from gensim.parsing.preprocessing import preprocess_string
+from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+from gensim.parsing.preprocessing import preprocess_documents
+from facebook_scraper import get_posts
+
 #
 #
 # class ActionHelloWorld(Action):
@@ -65,4 +70,50 @@ class DisplayUpcomingHolidays(Action):
 
         dispatcher.utter_message(text=content)
 
+        return []
+
+class ActionAdmissionInfo(Action):
+
+    def name(self) -> Text:
+        return "action_campus_facilities"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/campus-life"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_campus_facilities", tracker, link=Link)
+        return []
+
+class ActionLatestEvents(Action):
+
+    def name(self) -> Text:
+        return "action_latest_events"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        listposts = []
+        for post in get_posts("lakeheaduniversity", pages=4):
+            listposts.append(post)
+
+        df = pd.DataFrame(listposts)
+        df.dropna(subset=["text"], inplace=True)
+        text_corpus = df['text'].values
+        processed_corpus = preprocess_documents(text_corpus)
+        tagged_corpus = [TaggedDocument(d, [i]) for i, d in enumerate(processed_corpus)]
+        model = Doc2Vec(tagged_corpus, dm=0, vector_size=200, window=2, min_count=1, epochs=100, hs=1)
+
+        # get last user message
+        userMessage = tracker.latest_message['text']
+        # find matching movies
+        new_doc = preprocess_string(userMessage)
+        test_doc_vector = model.infer_vector(new_doc)
+        sims = model.docvecs.most_similar(positive=[test_doc_vector])
+        # get the top 5 matches
+        movies = [df['text'].iloc[s[0]] for s in sims[:5]]
+        # send the bot answer to the user
+        botResponse = f"These are the latest events from Lakehead University: {movies}.".replace('[', '').replace(']', '')
+        dispatcher.utter_message(text=botResponse)
         return []

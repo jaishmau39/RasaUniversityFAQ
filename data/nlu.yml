@@ -107,3 +107,21 @@ nlu:
     - Can you please tell me about the admissions
     - Can you please tell me about the next intake
     - Tell me about the next intake
+
+- intent: campus_facilities
+  examples: |
+      - what are the different facilities provided by lakehead
+      - what facilities do lakehead campuses have
+      - How can i learn about sports and recreational activities
+      - learn more about residence and housing
+      - student support resources
+      - what is campus life like at lakehead
+      - tell me about campus life
+#      - information on Thunder Bay campus
+#      - information on Orilla campus
+- intent: latest_events
+  examples: |
+      - what are the latest events at lakehead university
+      - can i know the whats happening currently 
+      - information events
+

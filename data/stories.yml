@@ -35,7 +35,7 @@ stories:
   - action: utter_greet
   - intent: check_upcoming_holidays
   - action: display_upcoming_holidays
-  - action: utter_goodbye
+#  - action: utter_goodbye
 
 - story: user wants to check admission info
   steps:
@@ -43,4 +43,17 @@ stories:
   - action: utter_greet
   - intent: check_admission_info
   - action: action_admission_info
-  - action: utter_goodbye
+#  - action: utter_goodbye
+
+- story: campus path
+  steps:
+    - intent: campus_facilities
+    - action: action_campus_facilities
+#    - action: utter_what_next
+
+- story: latest events
+  steps:
+    - intent: latest_events
+    - action: utter_latest_events
+    - action: action_latest_events
+
