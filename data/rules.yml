@@ -11,3 +11,21 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+# rules for prompting latest events
+#- rule: Activate latest events form
+#  steps:
+#  - intent: latest_events
+#  - action: latest_event_form
+#  - active_loop: latest_event_form
+#
+#- rule: Submit latest events form
+#  condition:
+#    - active loop: latest_event_form
+#  steps:
+#    - action: latest_event_form
+#    - active_loop: null
+#    - slot_was_set:
+#        - requested_slot: null
+#    - action: utter_submit
+#    - action: utter_event_slot_values

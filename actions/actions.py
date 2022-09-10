@@ -93,6 +93,7 @@ class ActionLatestEvents(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # dispatcher.utter_message(text="What cuisine?")
 
         listposts = []
         for post in get_posts("lakeheaduniversity", pages=4):
@@ -106,14 +107,15 @@ class ActionLatestEvents(Action):
         model = Doc2Vec(tagged_corpus, dm=0, vector_size=200, window=2, min_count=1, epochs=100, hs=1)
 
         # get last user message
-        userMessage = tracker.latest_message['text']
-        # find matching movies
+        userMessage = tracker.get_slot("latest_event")
+        # userMessage = tracker.latest_message['text']
+        # find matching posts
         new_doc = preprocess_string(userMessage)
         test_doc_vector = model.infer_vector(new_doc)
         sims = model.docvecs.most_similar(positive=[test_doc_vector])
         # get the top 5 matches
-        movies = [df['text'].iloc[s[0]] for s in sims[:5]]
+        posts = [df['text'].iloc[s[0]] for s in sims[:5]]
         # send the bot answer to the user
-        botResponse = f"These are the latest events from Lakehead University: {movies}.".replace('[', '').replace(']', '')
+        botResponse = f"These are the latest events from Lakehead University: {posts}.".replace('[', '').replace(']', '')
         dispatcher.utter_message(text=botResponse)
         return []

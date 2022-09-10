@@ -119,9 +119,19 @@ nlu:
       - tell me about campus life
 #      - information on Thunder Bay campus
 #      - information on Orilla campus
+
+# latest events
 - intent: latest_events
   examples: |
       - what are the latest events at lakehead university
-      - can i know the whats happening currently 
-      - information events
+      - can i know the whats happening currently
+      - i want to know latest information about lakehead
+
+- intent: ask_events
+  examples: |
+      - can i know the current events regarding [admissions](latest_event)
+      - i want to know latest information regarding [residence](latest_event)
+      - what are the latest events about [admissions](latest_event)
+      - can i know the latest news about [residence](latest_event)
+#
 

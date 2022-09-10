@@ -12,6 +12,7 @@ intents:
   - check_admission_info
   - campus_facilities
   - latest_events
+  - ask_events
 
 responses:
   utter_greet:
@@ -41,8 +42,38 @@ responses:
 #            Select the campus to know more information about it."
      - text: "Click on the link provided below to learn more about the facilities provided by lakehead university to its students [ ]{link}"
 
+
   utter_latest_events:
-  - text: "What would you like know about Lakehead University today?"
+    - text: "What would you like know about Lakehead University today?"
+
+  utter_submit:
+    - text: "Okay Thanks!"
+
+#  utter_event_slot_values:
+#    - text: "Let me fetch info on {latest_event}"
+#
+#
+## form for latest events
+entities:
+- latest_event
+#
+slots:
+  latest_event:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: latest_event
+#    conditions:
+#    - active_loop: latest_event_form
+##        requested_slot: latest_event
+#
+#forms:
+#  latest_event_form:
+#   required_slots:
+#    - entity: latest_event
+
+
 
 actions:
 - action_admission_info
