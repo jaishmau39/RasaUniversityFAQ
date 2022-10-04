@@ -92,11 +92,11 @@ nlu:
 
 - intent: check_upcoming_holidays
   examples: |
-    - I would like to know the events for this month
+    - like to know the events for this month
     - Show me this month's holidays
     - When is my next holiday
-    - I want to know about holidays
-    - Can you please tell me about the upcoming holidays
+    - want to know about holidays
+    - tell me about the upcoming holidays
 
 - intent: check_admission_info
   examples: |
@@ -117,8 +117,7 @@ nlu:
       - student support resources
       - what is campus life like at lakehead
       - tell me about campus life
-#      - information on Thunder Bay campus
-#      - information on Orilla campus
+
 
 # latest events
 - intent: latest_events
@@ -133,5 +132,19 @@ nlu:
       - i want to know latest information regarding [residence](latest_event)
       - what are the latest events about [admissions](latest_event)
       - can i know the latest news about [residence](latest_event)
-#
+#------
+#- intent: ask_for_professor_info
+#  examples: |
+#      - i need contact information of professor [Ruizhong](proff_name)
+#      - get the contact information of professor [Amin](proff_name)
+#      - Give me contact information of professor [Jinan](proff_name)
+#      - show me contact information for professor [Xing](proff_name)
+
+- intent: request_proff_name
+  examples: |
+      - i want contact information of professor
+      - get the contact information of professor
+      - Give me contact information of professor 
+      - show me contact information of professor
+
 

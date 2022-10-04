@@ -12,6 +12,7 @@ from typing import Any, Text, Dict, List
 # Python program to read an excel file
 
 import pandas as pd
+import csv
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -118,4 +119,44 @@ class ActionLatestEvents(Action):
         # send the bot answer to the user
         botResponse = f"These are the latest events from Lakehead University: {posts}.".replace('[', '').replace(']', '')
         dispatcher.utter_message(text=botResponse)
+        return []
+
+# -------
+
+class ActionSearchProffInfo(Action):
+
+    def name(self) -> Text:
+        return "action_search_proff_info"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+
+
+        #person = self.from_entity(entity="PERSON")
+        person = tracker.get_slot("proff_full_name")
+        print(person)
+
+        with open('cs_faculty.csv', 'r') as file:
+            reader = csv.reader(file)
+        #
+        #     # get a list of universities in the desired location
+        #
+        #     output = [row for row in reader if row['name'] == proff_name]
+        #
+        #     if output:
+        #
+        #         reply = f"This is the information found on the {proff_name}:"
+        #
+        #         reply += "\n- " + "\n- ".join([item['email'] for item in output])
+        #
+        #         # utter the message
+        #
+        #         dispatcher.utter_message(reply)
+        #
+        #     else:  # the list is empty
+        #
+        #         dispatcher.utter_message(f"I could not find any information on {proff_name}")
+
         return []

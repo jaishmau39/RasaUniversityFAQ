@@ -13,6 +13,8 @@ intents:
   - campus_facilities
   - latest_events
   - ask_events
+#-------------
+  - request_proff_name
 
 responses:
   utter_greet:
@@ -40,7 +42,7 @@ responses:
   utter_campus_facilities:
 #    - text: "Lakehead University has two main campus locations in Thunder Bay and Orillia.
 #            Select the campus to know more information about it."
-     - text: "Click on the link provided below to learn more about the facilities provided by lakehead university to its students [ ]{link}"
+  - text: "Click on the link provided below to learn more about the facilities provided by lakehead university to its students [ ]{link}"
 
 
   utter_latest_events:
@@ -49,14 +51,23 @@ responses:
   utter_submit:
     - text: "Okay Thanks!"
 
-#  utter_event_slot_values:
-#    - text: "Let me fetch info on {latest_event}"
-#
-#
-## form for latest events
+#--------------
+  utter_proff_name_slot_values:
+  - text: Looking up information on {proff_full_name}!
+
+
+
+
 entities:
 - latest_event
-#
+#---------
+#- proff_name
+
+forms:
+  proff_name_form:
+    required_slots:
+      - proff_full_name
+
 slots:
   latest_event:
     type: text
@@ -64,15 +75,24 @@ slots:
     mappings:
     - type: from_entity
       entity: latest_event
-#    conditions:
-#    - active_loop: latest_event_form
-##        requested_slot: latest_event
-#
-#forms:
-#  latest_event_form:
-#   required_slots:
-#    - entity: latest_event
 
+#-------------------
+  proff_full_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: proff_name_form
+           requested_slot: proff_full_name
+
+#-----------------
+#  proff_name:
+#    type: text
+#    influence_conversation: true
+#    mappings:
+#    - type: from_entity
+#      entity: proff_name
 
 
 actions:
@@ -80,6 +100,9 @@ actions:
 - display_upcoming_holidays
 - action_campus_facilities
 - action_latest_events
+- action_search_proff_info
+- utter_greet
+- utter_proff_name_slot_values
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

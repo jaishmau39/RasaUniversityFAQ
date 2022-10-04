@@ -62,3 +62,35 @@ stories:
       - latest_event: residence
     - action: utter_submit
     - action: action_latest_events
+
+#--------
+#- story: search professor information
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: ask_for_professor_info
+#    entities:
+#      - proff_name: Amin
+#  - slot_was_set:
+#      - proff_name: Amin
+#  - action: action_search_proff_info
+
+- story: search professor information
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_proff_name
+  # not done
+  - action: proff_name_form
+  - active_loop: proff_name_form
+  - slot_was_set:
+      - requested_slot: proff_full_name
+  - slot_was_set:
+      - proff_full_name: Dr. Xing Tan
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+  - action: utter_proff_name_slot_values
+
+  - action: action_search_proff_info
+
