@@ -80,7 +80,6 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: request_proff_name
-  # not done
   - action: proff_name_form
   - active_loop: proff_name_form
   - slot_was_set:
