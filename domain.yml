@@ -15,6 +15,11 @@ intents:
   - ask_events
 #-------------
   - request_proff_name
+#-----
+  - ask_for_research_prof
+#-------------
+  - ask_admission_requirements
+  - ask_student_type
 
 responses:
   utter_greet:
@@ -54,14 +59,39 @@ responses:
 #--------------
   utter_proff_name_slot_values:
   - text: Looking up information on {proff_full_name}!
+#----
+  utter_admission_requirements:
+  - text: "Click on the link provided below to learn about the admission requirements at Lakehead University. [ ]{link}"
 
-
+  utter_student_type:
+    - text: "Please select the student type you belong to, from the options below."
+      buttons:
+        - title: "High School Student"
+          payload: '/ask_admission_requirements'
+        - title: "Home Schooled Student"
+          payload: '/ask_admission_requirements'
+        - title: "College Transfer Student"
+          payload: '/ask_admission_requirements'
+        - title: "University Transfer Student"
+          payload: '/ask_admission_requirements'
+        - title: "International Student"
+          payload: '/ask_admission_requirements'
+        - title: "Mature Student"
+          payload: '/ask_admission_requirements'
+        - title: "Returning Lakehead Student"
+          payload: '/ask_admission_requirements'
+        - title: "Visiting Student"
+          payload: '/ask_admission_requirements'
+        - title: "Special Student"
+          payload: '/ask_admission_requirements'
 
 
 entities:
 - latest_event
 #---------
 #- proff_name
+#----
+- topic
 
 forms:
   proff_name_form:
@@ -85,14 +115,12 @@ slots:
         conditions:
          - active_loop: proff_name_form
            requested_slot: proff_full_name
-
-#-----------------
-#  proff_name:
-#    type: text
-#    influence_conversation: true
-#    mappings:
-#    - type: from_entity
-#      entity: proff_name
+#----
+  topic:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: topic
 
 
 actions:
@@ -103,6 +131,11 @@ actions:
 - action_search_proff_info
 - utter_greet
 - utter_proff_name_slot_values
+#----
+- action_find_prof_name
+#--------
+- action_admission_requirements
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

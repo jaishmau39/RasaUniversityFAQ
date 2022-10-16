@@ -64,16 +64,7 @@ stories:
     - action: action_latest_events
 
 #--------
-#- story: search professor information
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: ask_for_professor_info
-#    entities:
-#      - proff_name: Amin
-#  - slot_was_set:
-#      - proff_name: Amin
-#  - action: action_search_proff_info
+
 
 - story: search professor information
   steps:
@@ -90,6 +81,34 @@ stories:
       - requested_slot: null
   - active_loop: null
   - action: utter_proff_name_slot_values
-
   - action: action_search_proff_info
 
+#------
+- story: search prof name
+  steps:
+  - intent: greet
+  - action: utter_greet
+    # not done
+  - intent: ask_for_research_prof
+    entities:
+      - topic: artificial intelligence
+  - slot_was_set:
+      - topic: artificial intelligence
+    # not done
+  - action: action_find_prof_name
+
+#------------------------
+- story: admission requirements
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_admission_requirements
+  - action: action_admission_requirements
+
+- story: am student
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_student_type
+    # not done
+  - action: utter_student_type

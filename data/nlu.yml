@@ -100,13 +100,10 @@ nlu:
 
 - intent: check_admission_info
   examples: |
-    - Tell me about admissions
-    - When will admissions happen
-    - When is the next intake
-    - When is the admissions of students taking place
-    - Can you please tell me about the admissions
-    - Can you please tell me about the next intake
     - Tell me about the next intake
+    - When will next intake happen
+    - When is the next intake
+    - Can you please tell me about the next intake
 
 - intent: campus_facilities
   examples: |
@@ -128,7 +125,7 @@ nlu:
 
 - intent: ask_events
   examples: |
-      - can i know the current events regarding [admissions](latest_event)
+      - can i know the latest events regarding [admissions](latest_event)
       - i want to know latest information regarding [residence](latest_event)
       - what are the latest events about [admissions](latest_event)
       - can i know the latest news about [residence](latest_event)
@@ -146,5 +143,40 @@ nlu:
       - get the contact information of professor
       - Give me contact information of professor 
       - show me contact information of professor
+#------
+- intent: ask_for_research_prof
+  examples: |
+   - I need professor for [big data](topic) 
+   - I need professor for [cybersecurity](topic) 
+   - I need professor for [machine vision](topic) 
+   - I need professor for [artificial intelligence](topic)
+   - show me professors for [big data](topic) 
+   - show me professors for [cybersecurity](topic) 
+   - show me professors for [machine vision](topic) 
+   - show me professors for [artificial intelligence](topic) 
+   - help me find professors for [big data](topic)
+   - help me find professors for [cybersecurity](topic)
+   - help me find professors for [machine vision](topic)
+   - help me find professors for [artificial intelligence](topic)
+#   - help me find professors for [Cybersecurity](topic) topic
+#   - show me professors for [Cybersecurity](topic) topic
+#   - help me find professors for [Knowledge Representation and Reasoning](topic) topic
+#   - show me professors for [Knowledge Representation and Reasoning](topic) topic
+#   - I need help finding professors for [Machine Learning](topic)
 
+#-------------
+- intent: ask_admission_requirements
+  examples: |
+      - i want to know the requirements for admissions
+      - can i know about the admission requirements at lakehead 
+      - what are the admission requirements at lakehead
+      - need admission requirements
 
+- intent: ask_student_type
+  examples: |
+      - i am a student applicant
+      - i am an international student
+      - I am a special student 
+      - i am a high school student
+      - i am a graduate student 
+      - i am an undergraduate student

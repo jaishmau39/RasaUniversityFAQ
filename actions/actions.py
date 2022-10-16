@@ -136,7 +136,7 @@ class ActionSearchProffInfo(Action):
 
         #person = self.from_entity(entity="PERSON")
         person = tracker.get_slot("proff_full_name")
-        print(person)
+        # print(person)
         df3 = pd.read_csv(r'cs_faculty.csv')
         df_email = df3['email'][df3['name'] == person]
         email_info = str(df_email.values)
@@ -170,4 +170,36 @@ class ActionSearchProffInfo(Action):
         #
         #         dispatcher.utter_message(f"I could not find any information on {proff_name}")
 
+        return []
+
+
+class ActionFindProffName(Action):
+
+    def name(self) -> Text:
+        return "action_find_prof_name"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        topic = tracker.get_slot("topic")
+        print(topic)
+        # query = {"expertise": {"$regex": topic}}
+        # mydoc = myCol.find(query, {"_id": 0, "name": 1, "expertise": 1, "phone": 1, "about": 1}).limit(3)
+        #
+        # for x in mydoc:
+        #     dispatcher.utter_message(text=f"Here what I have found: \n {x}")
+
+        return []
+
+class ActionAdmissionRequirements(Action):
+
+    def name(self) -> Text:
+        return "action_admission_requirements"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/admissions"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_admission_requirements", tracker, link=Link)
         return []

@@ -16,7 +16,7 @@ pipeline:
 #   - name: SpacyEntityExtractor
 #   - name: SpacyFeaturizer
 #     pooling: mean
-
+#--------------------------------------------------------------------------
 
    - name: WhitespaceTokenizer
    - name: RegexFeaturizer
