@@ -146,24 +146,69 @@ nlu:
 #------
 - intent: ask_for_research_prof
   examples: |
-   - I need professor for [big data](topic) 
-   - I need professor for [cybersecurity](topic) 
-   - I need professor for [machine vision](topic) 
    - I need professor for [artificial intelligence](topic)
    - show me professors for [big data](topic) 
-   - show me professors for [cybersecurity](topic) 
-   - show me professors for [machine vision](topic) 
-   - show me professors for [artificial intelligence](topic) 
-   - help me find professors for [big data](topic)
    - help me find professors for [cybersecurity](topic)
-   - help me find professors for [machine vision](topic)
-   - help me find professors for [artificial intelligence](topic)
-#   - help me find professors for [Cybersecurity](topic) topic
-#   - show me professors for [Cybersecurity](topic) topic
-#   - help me find professors for [Knowledge Representation and Reasoning](topic) topic
-#   - show me professors for [Knowledge Representation and Reasoning](topic) topic
-#   - I need help finding professors for [Machine Learning](topic)
+   - I need help finding professors for [machine learning](topic)
 
+- lookup: topic
+  examples: |
+    - networks
+    - computer communications
+    - cryptography
+    - network security
+    - combinatorics 
+    - coding theory
+    - Thick Data Analytics 
+    - Collaborative Learning
+    - Data Mining 
+    - Web Services
+    - smart health
+    - artificial intelligence
+    - Internet of Healthcare Things
+    - Graph-Based Data Analytics
+    - Translational Medical Informatics
+    - Social Data Analytics
+    - Health Informatics
+    - Mathematical and Computational Modelling
+    - Optimization
+    - 5G and beyond wireless communication systems
+    - Internet of Things 
+    - IoT
+    - smart health technology
+    - deep learning
+    - edge computing
+    - Robotics
+    - Haptics
+    - big data
+    - Human-Computer Interaction
+    - Tactile Perception
+    - natural language processing,
+    - software maintenance and evolution
+    - mining software repositories
+    - program comprehension
+    - web information retrieval
+    - recommendation systems 
+    - Authentication
+    - Machine Interface
+    - cybersecurity
+    - SoC hardware acceleration for application AI
+    - Machine Vision
+    - System-Level Design for AI Application
+    - Edge Computing
+    - Adaptive Computing
+    - HW/SW Co-Design
+    - Abnormal activity recognition
+    - Complexity Analysis 
+    - Algorithm Design for AI 
+    - Knowledge Representation and Reasoning
+    - Processing Modeling
+    - Numerical Analysis
+    - Large Sparse Linear Systems
+    - Multigrid Methods 
+    - Neural Networks
+    - Graph Drawing and Visualization
+    - machine learning
 #-------------
 - intent: ask_admission_requirements
   examples: |

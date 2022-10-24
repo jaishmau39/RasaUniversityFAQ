@@ -136,17 +136,18 @@ class ActionSearchProffInfo(Action):
 
         #person = self.from_entity(entity="PERSON")
         person = tracker.get_slot("proff_full_name")
-        # print(person)
-        df3 = pd.read_csv(r'cs_faculty.csv')
+        print(person)
+        df3 = pd.read_csv(r'cs_faculty.csv', encoding='latin1')
         df_email = df3['email'][df3['name'] == person]
         email_info = str(df_email.values)
         email_info = email_info.replace("[", "")
         email_info = email_info.replace("]", "")
         email_info = email_info.replace("'", "")
         email_info = email_info.replace("'", "")
-
+        print(email_info)
 
         dispatcher.utter_message(text=email_info)
+
         # print(df3.loc[person]['email'])
 
         # with open('cs_faculty.csv', 'r') as file:
@@ -203,3 +204,4 @@ class ActionAdmissionRequirements(Action):
         str((tracker.latest_message)['text'])
         dispatcher.utter_template("utter_admission_requirements", tracker, link=Link)
         return []
+

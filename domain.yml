@@ -16,7 +16,8 @@ intents:
 #-------------
   - request_proff_name
 #-----
-  - ask_for_research_prof
+  - ask_for_research_prof:
+      use_entities: true
 #-------------
   - ask_admission_requirements
   - ask_student_type

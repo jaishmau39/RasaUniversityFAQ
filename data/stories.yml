@@ -92,8 +92,8 @@ stories:
   - intent: ask_for_research_prof
     entities:
       - topic: artificial intelligence
-  - slot_was_set:
-      - topic: artificial intelligence
+#  - slot_was_set:
+#      - topic: artificial intelligence
     # not done
   - action: action_find_prof_name
 

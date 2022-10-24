@@ -1,0 +1,16 @@
+[
+  {
+    "text": "i want to know the requirements for admissions",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "latest_event",
+        "start": 36,
+        "end": 46,
+        "confidence_entity": 0.7721592783927917,
+        "value": "admissions",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

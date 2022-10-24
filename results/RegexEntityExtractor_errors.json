@@ -1,0 +1,86 @@
+[
+  {
+    "text": "can i know the latest events regarding admissions",
+    "entities": [
+      {
+        "start": 39,
+        "end": 49,
+        "value": "admissions",
+        "entity": "latest_event"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "latest_event",
+        "start": 39,
+        "end": 49,
+        "confidence_entity": 0.8512647747993469,
+        "value": "admissions",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i want to know latest information regarding residence",
+    "entities": [
+      {
+        "start": 44,
+        "end": 53,
+        "value": "residence",
+        "entity": "latest_event"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "latest_event",
+        "start": 44,
+        "end": 53,
+        "confidence_entity": 0.9479924440383911,
+        "value": "residence",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what are the latest events about admissions",
+    "entities": [
+      {
+        "start": 33,
+        "end": 43,
+        "value": "admissions",
+        "entity": "latest_event"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "latest_event",
+        "start": 33,
+        "end": 43,
+        "confidence_entity": 0.8443198204040527,
+        "value": "admissions",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can i know the latest news about residence",
+    "entities": [
+      {
+        "start": 33,
+        "end": 42,
+        "value": "residence",
+        "entity": "latest_event"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "latest_event",
+        "start": 33,
+        "end": 42,
+        "confidence_entity": 0.9427064061164856,
+        "value": "residence",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

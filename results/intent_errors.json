@@ -1,0 +1,338 @@
+[
+  {
+    "text": "moin",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8999717831611633
+    }
+  },
+  {
+    "text": "let's go",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.32152098417282104
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5288155674934387
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4413318932056427
+    }
+  },
+  {
+    "text": "have a nice day",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3913570046424866
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.43184801936149597
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7301705479621887
+    }
+  },
+  {
+    "text": "of course",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "request_proff_name",
+      "confidence": 0.8702893257141113
+    }
+  },
+  {
+    "text": "never",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8678925633430481
+    }
+  },
+  {
+    "text": "I don't think so",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3161776065826416
+    }
+  },
+  {
+    "text": "don't like that",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6154404878616333
+    }
+  },
+  {
+    "text": "wonderful",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5020363330841064
+    }
+  },
+  {
+    "text": "I am going to save the world",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6015869379043579
+    }
+  },
+  {
+    "text": "so good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5412886738777161
+    }
+  },
+  {
+    "text": "I don't feel very well",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.35149282217025757
+    }
+  },
+  {
+    "text": "not good",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7729198336601257
+    }
+  },
+  {
+    "text": "not very good",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7222068905830383
+    }
+  },
+  {
+    "text": "When is my next holiday",
+    "intent": "check_upcoming_holidays",
+    "intent_prediction": {
+      "name": "check_admission_info",
+      "confidence": 0.6772368550300598
+    }
+  },
+  {
+    "text": "student support resources",
+    "intent": "campus_facilities",
+    "intent_prediction": {
+      "name": "ask_student_type",
+      "confidence": 0.9397366642951965
+    }
+  },
+  {
+    "text": "what are the latest events at lakehead university",
+    "intent": "latest_events",
+    "intent_prediction": {
+      "name": "campus_facilities",
+      "confidence": 0.5256327390670776
+    }
+  },
+  {
+    "text": "can i know the whats happening currently",
+    "intent": "latest_events",
+    "intent_prediction": {
+      "name": "check_admission_info",
+      "confidence": 0.358532190322876
+    }
+  },
+  {
+    "text": "good evening",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.8444675803184509
+    }
+  },
+  {
+    "text": "goodevening",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.7344847917556763
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.6759412884712219
+    }
+  },
+  {
+    "text": "indeed",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "ask_for_research_prof",
+      "confidence": 0.705476701259613
+    }
+  },
+  {
+    "text": "that sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.9316806793212891
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.43047380447387695
+    }
+  },
+  {
+    "text": "no",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.5898725986480713
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4276144206523895
+    }
+  },
+  {
+    "text": "no way",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.8795861601829529
+    }
+  },
+  {
+    "text": "not really",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.99843829870224
+    }
+  },
+  {
+    "text": "great",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.3044717311859131
+    }
+  },
+  {
+    "text": "I am great",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "ask_student_type",
+      "confidence": 0.34873107075691223
+    }
+  },
+  {
+    "text": "super stoked",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "campus_facilities",
+      "confidence": 0.48601335287094116
+    }
+  },
+  {
+    "text": "extremely good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9249681234359741
+    }
+  },
+  {
+    "text": "my day was horrible",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "check_upcoming_holidays",
+      "confidence": 0.8414019346237183
+    }
+  },
+  {
+    "text": "I am disappointed",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "ask_for_research_prof",
+      "confidence": 0.31022050976753235
+    }
+  },
+  {
+    "text": "so saad",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.6144248247146606
+    }
+  },
+  {
+    "text": "like to know the events for this month",
+    "intent": "check_upcoming_holidays",
+    "intent_prediction": {
+      "name": "check_admission_info",
+      "confidence": 0.6663005352020264
+    }
+  },
+  {
+    "text": "what are the different facilities provided by lakehead",
+    "intent": "campus_facilities",
+    "intent_prediction": {
+      "name": "latest_events",
+      "confidence": 0.6347140669822693
+    }
+  },
+  {
+    "text": "i want to know latest information about lakehead",
+    "intent": "latest_events",
+    "intent_prediction": {
+      "name": "request_proff_name",
+      "confidence": 0.35199522972106934
+    }
+  },
+  {
+    "text": "i want to know latest information regarding residence",
+    "intent": "ask_events",
+    "intent_prediction": {
+      "name": "ask_admission_requirements",
+      "confidence": 0.4085303246974945
+    }
+  }
+]
