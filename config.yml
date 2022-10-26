@@ -19,7 +19,7 @@ pipeline:
 #--------------------------------------------------------------------------
 
    - name: WhitespaceTokenizer
-   - name: RegexFeaturizer
+#   - name: RegexFeaturizer
    - name: RegexEntityExtractor
      case_sensitive: False
      use_lookup_tables: True

@@ -12,6 +12,7 @@ from typing import Any, Text, Dict, List
 # Python program to read an excel file
 
 import pandas as pd
+import numpy as np
 import csv
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -148,28 +149,6 @@ class ActionSearchProffInfo(Action):
 
         dispatcher.utter_message(text=email_info)
 
-        # print(df3.loc[person]['email'])
-
-        # with open('cs_faculty.csv', 'r') as file:
-        #     reader = csv.reader(file)
-        #
-        #     # get a list of universities in the desired location
-        #
-        #     output = [row for row in reader if row['name'] == proff_name]
-        #
-        #     if output:
-        #
-        #         reply = f"This is the information found on the {proff_name}:"
-        #
-        #         reply += "\n- " + "\n- ".join([item['email'] for item in output])
-        #
-        #         # utter the message
-        #
-        #         dispatcher.utter_message(reply)
-        #
-        #     else:  # the list is empty
-        #
-        #         dispatcher.utter_message(f"I could not find any information on {proff_name}")
 
         return []
 
@@ -183,13 +162,19 @@ class ActionFindProffName(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         topic = tracker.get_slot("topic")
+        topic1 = str(topic).lower()
         print(topic)
-        # query = {"expertise": {"$regex": topic}}
-        # mydoc = myCol.find(query, {"_id": 0, "name": 1, "expertise": 1, "phone": 1, "about": 1}).limit(3)
-        #
-        # for x in mydoc:
-        #     dispatcher.utter_message(text=f"Here what I have found: \n {x}")
+        print(topic1)
 
+        df4 = pd.read_csv(r'cs_faculty.csv', encoding='latin1').apply(lambda x: x.astype(str).str.lower())
+        # df_name = df4[df4["research areas"].dropna().str.contains(topic1)]['name'].values
+        df_name = df4[df4["research areas"].dropna().str.contains(topic1)]['name']
+        df_name = str(df_name.values)
+        df_name = df_name.replace("'", "")
+        df_name = df_name.replace("'", "")
+
+
+        dispatcher.utter_message(text=df_name)
         return []
 
 class ActionAdmissionRequirements(Action):
