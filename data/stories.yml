@@ -51,17 +51,17 @@ stories:
     - action: action_campus_facilities
 #    - action: utter_what_next
 
-- story: latest events
-  steps:
-    - intent: latest_events
-    - action: utter_latest_events
-    - intent: ask_events
-      entities:
-      - latest_event: residence
-    - slot_was_set:
-      - latest_event: residence
-    - action: utter_submit
-    - action: action_latest_events
+#- story: latest events
+#  steps:
+#    - intent: latest_events
+#    - action: utter_latest_events
+#    - intent: ask_events
+#      entities:
+#      - latest_event: residence
+#    - slot_was_set:
+#      - latest_event: residence
+#    - action: utter_submit
+#    - action: action_latest_events
 
 #--------
 
@@ -112,3 +112,13 @@ stories:
   - intent: ask_student_type
     # not done
   - action: utter_student_type
+#---------------------------------
+
+- story: admission deadline path
+  steps:
+    - intent: ask_admission_deadline
+    - action: utter_admission_deadline
+    - intent: ask_specific_deadline
+      entities:
+        - program_intake: undergraduate fall
+    - action: action_admission_deadline

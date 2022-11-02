@@ -117,25 +117,19 @@ nlu:
 
 
 # latest events
-- intent: latest_events
-  examples: |
-      - what are the latest events at lakehead university
-      - can i know the whats happening currently
-      - i want to know latest information about lakehead
-
-- intent: ask_events
-  examples: |
-      - can i know the latest events regarding [admissions](latest_event)
-      - i want to know latest information regarding [residence](latest_event)
-      - what are the latest events about [admissions](latest_event)
-      - can i know the latest news about [residence](latest_event)
-#------
-#- intent: ask_for_professor_info
+#- intent: latest_events
 #  examples: |
-#      - i need contact information of professor [Ruizhong](proff_name)
-#      - get the contact information of professor [Amin](proff_name)
-#      - Give me contact information of professor [Jinan](proff_name)
-#      - show me contact information for professor [Xing](proff_name)
+#      - what are the latest events at lakehead university
+#      - can i know the whats happening currently
+#      - i want to know latest information about lakehead
+#
+#- intent: ask_events
+#  examples: |
+#      - can i know the latest events regarding [admissions](latest_event)
+#      - i want to know latest information regarding [residence](latest_event)
+#      - what are the latest events about [admissions](latest_event)
+#      - can i know the latest news about [residence](latest_event)
+
 
 - intent: request_proff_name
   examples: |
@@ -225,3 +219,16 @@ nlu:
       - i am a high school student
       - i am a graduate student 
       - i am an undergraduate student
+#-------------------------------------
+- intent: ask_admission_deadline
+  examples: |
+      - Can I know about admissions deadlines
+      - need admission deadlines
+      - give me admission deadlines
+      - need final dates for applying
+
+- intent: ask_specific_deadline
+  examples: |
+      - I need admission deadline for [undergraduate fall](program_intake)
+      - can i know admission deadline for [spring/summer](program_intake)
+      - give me deadlines for [deferral request]

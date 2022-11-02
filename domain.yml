@@ -11,8 +11,8 @@ intents:
   - check_upcoming_holidays
   - check_admission_info
   - campus_facilities
-  - latest_events
-  - ask_events
+#  - latest_events
+#  - ask_events
 #-------------
   - request_proff_name
 #-----
@@ -21,6 +21,9 @@ intents:
 #-------------
   - ask_admission_requirements
   - ask_student_type
+#---------
+  - ask_admission_deadline
+  - ask_specific_deadline
 
 responses:
   utter_greet:
@@ -51,8 +54,8 @@ responses:
   - text: "Click on the link provided below to learn more about the facilities provided by lakehead university to its students [ ]{link}"
 
 
-  utter_latest_events:
-    - text: "What would you like know about Lakehead University today?"
+#  utter_latest_events:
+#    - text: "What would you like know about Lakehead University today?"
 
   utter_submit:
     - text: "Okay Thanks!"
@@ -85,7 +88,20 @@ responses:
           payload: '/ask_admission_requirements'
         - title: "Special Student"
           payload: '/ask_admission_requirements'
-
+#----------------------------------------
+  utter_admission_deadline:
+    - text: "Please select the program and the intake you would like to know the admission deadline for."
+      buttons:
+        - title: "Undergraduate Programs Fall 2023"
+          payload: '/ask_specific_deadline{{"program_intake":"undergraduate fall"}}'
+        - title: "Other Undergraduate Programs Fall 2023"
+          payload: '/ask_specific_deadline{{"program_intake":"other undergraduate fall"}}'
+        - title: "Spring/Summer 2023"
+          payload: '/ask_specific_deadline{{"program_intake":"spring/summer"}}'
+        - title: "Winter 2023"
+          payload: '/ask_specific_deadline{{"program_intake":"winter"}}'
+        - title: "Deferral Request Fall"
+          payload: '/ask_specific_deadline{{"program_intake":"deferral request fall"}}'
 
 entities:
 - latest_event
@@ -93,6 +109,8 @@ entities:
 #- proff_name
 #----
 - topic
+#------
+- program_intake
 
 forms:
   proff_name_form:
@@ -122,13 +140,18 @@ slots:
     mappings:
     - type: from_entity
       entity: topic
-
+#----------
+  program_intake:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: program_intake
 
 actions:
 - action_admission_info
 - display_upcoming_holidays
 - action_campus_facilities
-- action_latest_events
+#- action_latest_events
 - action_search_proff_info
 - utter_greet
 - utter_proff_name_slot_values
@@ -136,6 +159,8 @@ actions:
 - action_find_prof_name
 #--------
 - action_admission_requirements
+#------------
+- action_admission_deadline
 
 session_config:
   session_expiration_time: 60

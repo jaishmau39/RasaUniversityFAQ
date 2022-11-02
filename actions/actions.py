@@ -190,3 +190,22 @@ class ActionAdmissionRequirements(Action):
         dispatcher.utter_template("utter_admission_requirements", tracker, link=Link)
         return []
 
+class ActionAdmissionDeadline(Action):
+
+    def name(self) -> Text:
+        return "action_admission_deadline"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        program_intake = tracker.get_slot("program_intake")
+        program_intake1 = str(program_intake).lower()
+        print(program_intake1)
+
+        df5 = pd.read_csv(r'ApplicationDeadlines.csv', encoding='latin1').apply(lambda x: x.astype(str).str.lower())
+        df_deadline = df5[df5["Admission Deadlines"].dropna().str.contains(program_intake1)]['Dates']
+        df_deadline = str(df_deadline.values)
+        # df_name = df_name.replace("'", "")
+        # df_name = df_name.replace("'", "")
+        dispatcher.utter_message(text=df_deadline)
+        return []
