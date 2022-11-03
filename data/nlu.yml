@@ -211,14 +211,43 @@ nlu:
       - what are the admission requirements at lakehead
       - need admission requirements
 
-- intent: ask_student_type
+- intent: ask_student_program_requirements
+  examples: |
+      - want to know student and program admission requirements
+      - can i know student and program admission requirements at lakehead 
+      - what are student and program admission requirements 
+      - need student and program admission requirements
+
+- intent: am_student
   examples: |
       - i am a student applicant
       - i am an international student
-      - I am a special student 
+      - I am a special student
       - i am a high school student
-      - i am a graduate student 
+      - i am a graduate student
       - i am an undergraduate student
+
+- intent: program_type
+  examples: |
+      - want to know more about programs
+      - need to learn about graduate programs
+      - can i know more about speciality programs
+      - want to learn about undergraduate programs
+
+- intent: ask_ielts_requirements
+  examples: |
+      - want to know more about english language proficiency
+      - need to learn about english language proficiency
+      - can i know more about english language proficiency
+      - want to learn about english language proficiency
+#- intent: am_student_type
+#  examples: |
+#      - i am a student applicant
+#      - i am an international student
+#      - I am a special student
+#      - i am a high school student
+#      - i am a graduate student
+#      - i am an undergraduate student
 #-------------------------------------
 - intent: ask_admission_deadline
   examples: |

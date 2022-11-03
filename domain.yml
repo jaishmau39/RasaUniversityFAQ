@@ -20,7 +20,11 @@ intents:
       use_entities: true
 #-------------
   - ask_admission_requirements
-  - ask_student_type
+  - ask_student_program_requirements
+  - am_student
+  - ask_ielts_requirements
+  - program_type
+#  - ask_student_type
 #---------
   - ask_admission_deadline
   - ask_specific_deadline
@@ -65,29 +69,64 @@ responses:
   - text: Looking up information on {proff_full_name}!
 #----
   utter_admission_requirements:
-  - text: "Click on the link provided below to learn about the admission requirements at Lakehead University. [ ]{link}"
+  - text: "Click on the link provided below to learn about the specific student and program requirements at Lakehead University. [ ]{link}"
+
+  utter_ielts_requirements:
+    - text: "Click on the link provided below to learn about English Language Proficiency requirements at Lakehead University. [ ]{link}"
+
+  utter_specific_admission:
+    - text: "Your admission requirements may differ based on the type of student you are and the program you choose. English language proficiency is also an important factor in your admission to Lakehead University. Please select from the options below to learn more about admissions."
+      buttons:
+        - title: "Student"
+          payload: '/am_student'
+        - title: "Program"
+          payload: '/program_type'
+        - title: "English Language Proficiency"
+          payload: '/ask_ielts_requirements'
+
+  utter_specific_admission_two:
+    - text: "Click any of the options below to learn more about admission requirements. Or continue by asking LUbot another question."
+      buttons:
+        - title: "Student"
+          payload: '/am_student'
+        - title: "Program"
+          payload: '/program_type'
+        - title: "English Language Proficiency"
+          payload: '/ask_ielts_requirements'
 
   utter_student_type:
     - text: "Please select the student type you belong to, from the options below."
       buttons:
         - title: "High School Student"
-          payload: '/ask_admission_requirements'
+          payload: '/ask_student_program_requirements'
         - title: "Home Schooled Student"
-          payload: '/ask_admission_requirements'
+          payload: '/ask_student_program_requirements'
         - title: "College Transfer Student"
-          payload: '/ask_admission_requirements'
+          payload: '/ask_student_program_requirements'
         - title: "University Transfer Student"
-          payload: '/ask_admission_requirements'
+          payload: '/ask_student_program_requirements'
         - title: "International Student"
-          payload: '/ask_admission_requirements'
+          payload: '/ask_student_program_requirements'
         - title: "Mature Student"
-          payload: '/ask_admission_requirements'
+          payload: '/ask_student_program_requirements'
         - title: "Returning Lakehead Student"
-          payload: '/ask_admission_requirements'
+          payload: '/ask_student_program_requirements'
         - title: "Visiting Student"
-          payload: '/ask_admission_requirements'
+          payload: '/ask_student_program_requirements'
         - title: "Special Student"
-          payload: '/ask_admission_requirements'
+          payload: '/ask_student_program_requirements'
+
+  utter_program_type:
+    - text: "Lakehead University offers various programs to it's students. Programs such as Law, Indigenous Nursing Entry, Bachelor of Education Professional and Bachelor's programs  that are for one year falls under speciality programs. Please select from the options below to learn more about admission requirements for the programs you might be interested in and start your application process."
+      buttons:
+        - title: "Undergraduate"
+          payload: '/ask_student_program_requirements'
+        - title: "Graduate"
+          payload: '/ask_student_program_requirements'
+        - title: "Speciality"
+          payload: '/ask_student_program_requirements'
+        - title: "English Language Centre"
+          payload: '/ask_student_program_requirements'
 #----------------------------------------
   utter_admission_deadline:
     - text: "Please select the program and the intake you would like to know the admission deadline for."
@@ -161,6 +200,7 @@ actions:
 - action_admission_requirements
 #------------
 - action_admission_deadline
+- action_ielts_requirements
 
 session_config:
   session_expiration_time: 60

@@ -65,7 +65,6 @@ stories:
 
 #--------
 
-
 - story: search professor information
   steps:
   - intent: greet
@@ -88,30 +87,45 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-    # not done
   - intent: ask_for_research_prof
     entities:
       - topic: artificial intelligence
-#  - slot_was_set:
-#      - topic: artificial intelligence
-    # not done
   - action: action_find_prof_name
 
 #------------------------
 - story: admission requirements
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_admission_requirements
-  - action: action_admission_requirements
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_admission_requirements
+    # button clicks - student, program or english proficiency, if student is clicked, redirect to "am_student"
+    - action: utter_specific_admission
 
-- story: am student
+
+- story: student and program requirements
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_student_type
-    # not done
-  - action: utter_student_type
+  - intent: ask_student_program_requirements
+  - action: action_admission_requirements
+  - action: utter_specific_admission_two
+
+- story: student type path
+  steps:
+    - intent: am_student
+    - action: utter_student_type
+
+
+- story: program type path
+  steps:
+    - intent: program_type
+    # what program type are you looking for?, redirect to "ask_student_program_requirements"
+    - action: utter_program_type
+
+- story: english proficiency path
+  steps:
+  - intent: ask_ielts_requirements
+  - action: action_ielts_requirements
+  - action: utter_specific_admission_two
+
 #---------------------------------
 
 - story: admission deadline path

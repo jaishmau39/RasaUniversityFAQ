@@ -190,6 +190,18 @@ class ActionAdmissionRequirements(Action):
         dispatcher.utter_template("utter_admission_requirements", tracker, link=Link)
         return []
 
+class ActionIeltsRequirements(Action):
+
+    def name(self) -> Text:
+        return "action_ielts_requirements"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/studentcentral/applying/english-language-proficiency-requirements"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_ielts_requirements", tracker, link=Link)
+        return []
 class ActionAdmissionDeadline(Action):
 
     def name(self) -> Text:
