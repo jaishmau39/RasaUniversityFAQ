@@ -220,4 +220,41 @@ class ActionAdmissionDeadline(Action):
         # df_name = df_name.replace("'", "")
         # df_name = df_name.replace("'", "")
         dispatcher.utter_message(text=df_deadline)
+
+        if(program_intake1 == "audition"):
+            Link = "https://www.lakeheadu.ca/studentcentral/applying/application-details-for-media-studies-and-music-applicants"
+            str((tracker.latest_message)['text'])
+            dispatcher.utter_template("utter_media_music", tracker, link=Link)
+
+
+        return []
+
+class ActionAlternateOffers(Action):
+
+    def name(self) -> Text:
+        return "action_alternate_offers"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/studentcentral/applying/alternate-offers-"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_alternate_offers", tracker, link=Link)
+        return []
+
+class ActionStudyPermit(Action):
+
+    def name(self) -> Text:
+        return "action_study_permit"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/international/current/immigration#study"
+        Link2 = "https://www.lakeheadu.ca/international/newly-accepted/immigration"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_study_permit", tracker, link=Link, link2=Link2)
+        # Link2 = "https://www.lakeheadu.ca/international/newly-accepted/immigration"
+        # str((tracker.latest_message)['text'])
+        # dispatcher.utter_template("utter_study_permit", tracker, link2=Link2)
         return []

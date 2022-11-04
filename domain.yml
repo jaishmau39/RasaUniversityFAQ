@@ -28,6 +28,8 @@ intents:
 #---------
   - ask_admission_deadline
   - ask_specific_deadline
+  - low_average
+  - ask_study_permit_info
 
 responses:
   utter_greet:
@@ -141,6 +143,21 @@ responses:
           payload: '/ask_specific_deadline{{"program_intake":"winter"}}'
         - title: "Deferral Request Fall"
           payload: '/ask_specific_deadline{{"program_intake":"deferral request fall"}}'
+        - title: "Portfolio (Media and Music Applicants)"
+          payload: '/ask_specific_deadline{{"program_intake":"portfolio"}}'
+        - title: "Audition (Media and Music Applicants)"
+          payload: '/ask_specific_deadline{{"program_intake":"audition"}}'
+
+  utter_media_music:
+  - text: "If you are a Music or Media, Film, & Communications Applicant, find the link below for more information. [ ]{link}"
+#---------------------------
+  utter_alternate_offers:
+    - text: "If it is determined that you do not meet the program's admission requirements, you will be automatically considered for an alternate program that closely matches your interests. To find out more about Alternate offers and the Academic Support Access Program, see the link below. [ ]{link}"
+#-------------------------
+  utter_study_permit:
+  - text: "In order to study in Canada as an international student, you will require a study permit. For further information on how to apply for a study permit and other immigration-related topics, click the link below. [ ]{link}. \  \n 
+           
+           If you are a newly accepted international student. To learn how to submit an application for a study permit, see the link below. [ ]{link2}. \n"
 
 entities:
 - latest_event
@@ -201,6 +218,8 @@ actions:
 #------------
 - action_admission_deadline
 - action_ielts_requirements
+- action_alternate_offers
+- action_study_permit
 
 session_config:
   session_expiration_time: 60

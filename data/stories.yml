@@ -136,3 +136,54 @@ stories:
       entities:
         - program_intake: undergraduate fall
     - action: action_admission_deadline
+    - action: utter_admission_deadline
+
+#-----------------
+- story: alternate offers path
+  steps:
+    - intent: low_average
+    - action: action_alternate_offers
+#---------------
+#- story: applying to lakehead path
+#  steps:
+#    - intent: want to apply to lakehead
+#      # ask undergrad or grad,
+#      # undergrad- most full time undergrad {ont link}, returning or part -time undergrad {appli form link}, bachelor of education or bachelor of socil work {ont link}, international students(full time or part time) {application form link}
+#      # grad- grad {grad link}, international students(full time or part-time) {application form link}
+#      # display international student form for both grad and undergrad
+#    - action: utter_ask_application_type
+#
+#- story: bachelors application path
+#  steps:
+#    - intent: bachelors_application
+#      # display {ont link} and {application form link} and deadline
+#    - action: action_bachelors_application_link
+#      # note: if you are an international student, you will need a study permit to study in Canada. find the link below for more information
+#    - action: action_study_permit
+#      # If you require more information as an international student, contact interntional student services for more information.
+#    - action: action_international_student_services
+#    - action: utter_ask_application_type
+#
+#
+#- story: graduate application path
+#  steps:
+#    - intent: graduate_application
+#      # display {grad link} and {application form link} and deadline
+#    - action: action_graduate_application_link
+#      # note: if you are an international student, you will need a study permit to study in Canada. find the link below for more information
+#    - action: action_study_permit
+#      # If you require more information as an international student, contact interntional student services for more information.
+#    - action: action_international_student_services
+#    - action: utter_ask_application_type
+
+#--------------------
+- story: study permit path
+  steps:
+    - intent: ask_study_permit_info
+    - action: action_study_permit
+#--------------------
+#- story: international student services
+#  steps:
+#    - intent: ask_international_student_services
+#    # If you require more information as an international student, contact interntional student services for more information.
+#    - action: action_international_student_services

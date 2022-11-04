@@ -240,14 +240,7 @@ nlu:
       - need to learn about english language proficiency
       - can i know more about english language proficiency
       - want to learn about english language proficiency
-#- intent: am_student_type
-#  examples: |
-#      - i am a student applicant
-#      - i am an international student
-#      - I am a special student
-#      - i am a high school student
-#      - i am a graduate student
-#      - i am an undergraduate student
+
 #-------------------------------------
 - intent: ask_admission_deadline
   examples: |
@@ -261,3 +254,22 @@ nlu:
       - I need admission deadline for [undergraduate fall](program_intake)
       - can i know admission deadline for [spring/summer](program_intake)
       - give me deadlines for [deferral request]
+      - want to know admission deadline for [spring/summer](program_intake)
+#---------------------
+- intent: low_average
+  examples: |
+      - do not meet admission requirements
+      - have low average
+      - did not achieve the required grade
+      - did not achieve cut-off average
+      - not enough grades
+
+#------------------
+- intent: ask_study_permit_info
+  examples: |
+      - need to know about study permit
+      - what is a student visa
+      - how to apply for study permit
+      - how to apply for study permit
+      - how to get study permit
+      - steps for study permit application
