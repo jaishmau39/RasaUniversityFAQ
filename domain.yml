@@ -31,6 +31,9 @@ intents:
   - low_average
   - ask_study_permit_info
   - ask_international_student_services
+  - apply_to_lakehead
+  - undergraduate_application
+  - graduate_application
 responses:
   utter_greet:
   - text: "Hey! Hope you are doing well."
@@ -162,6 +165,30 @@ responses:
   - text: "International Student Services(ISS) at Lakehead University can advise international students with matters including immigration and finances as well as ease the transition from their home countries to Lakehead University and Canada. To find out more, click the following link. [ ]{link}. \  \n 
            
            In-person and online appointments are available through International Student Services. Through the online booking system, students can schedule a meeting with any of Lakehead University's international student advisors. To schedule an appointment, click on the link below. [ ]{link2}. \n"
+
+  utter_application_steps:
+    - text: "General steps for the application can be found in the link below. You can find information about transcripts here, along with the mailing address. [ ]{link}. \  \n 
+           
+             Your applicant type, program and duration of study will determine how to apply to Lakehead. [ ]{link2}. \n"
+
+  utter_ask_application_type:
+    - text: "Choose your application type from the options below."
+      buttons:
+        - title: "Undergraduate"
+          payload: '/undergraduate_application'
+        - title: "Graduate"
+          payload: '/graduate_application'
+
+  utter_bachelors_application_link:
+    - text: "Full-time undergraduate students, Bachelor of Education and Bachelor of Social Work students, find the link below. [ ]{link}. \  \n 
+
+             Returning or part-time undergraduate students and international students pursuing full time ot part time studies, find the link below. [ ]{link2}. \n"
+
+  utter_graduate_application_link:
+    - text: "For details on applications, graduate students can click on the following link.. [ ]{link}. \  \n 
+
+             International students pursuing full time ot part time studies, find the link below. [ ]{link2}. \n"
+
 entities:
 - latest_event
 #---------
@@ -224,7 +251,9 @@ actions:
 - action_alternate_offers
 - action_study_permit
 - action_international_student_services
-
+- action_application_steps
+- action_bachelors_application_link
+- action_graduate_application_link
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

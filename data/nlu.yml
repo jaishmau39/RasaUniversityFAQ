@@ -291,3 +291,29 @@ nlu:
       - how to get help for immigration
       - have to speak to an advisor for immigration 
       - who to speak for immigration advice
+
+- intent: apply_to_lakehead
+  examples: |
+      - apply to lakehead university
+      - need to apply to lakehead
+      - looking to apply to lakehead university 
+      - want to apply to lakehead 
+      - how to apply to lakehead
+      - steps to apply to lakehead
+      - lakehead university application process
+      - want to start application
+      - need to begin my application
+
+- intent: undergraduate_application
+  examples: |
+      - undergraduate application
+      - applying for undergraduate studies
+      - choose undergraduate
+      - select undergraduate
+
+- intent: graduate_application
+  examples: |
+      - graduate application
+      - applying for graduate studies
+      - choose graduate
+      - select graduate

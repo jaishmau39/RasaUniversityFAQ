@@ -269,3 +269,45 @@ class ActionInternationalServices(Action):
         str((tracker.latest_message)['text'])
         dispatcher.utter_template("utter_international_student_services", tracker, link=Link, link2=Link2)
         return []
+
+class ActionApplicationSteps(Action):
+
+    def name(self) -> Text:
+        return "action_application_steps"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/studentcentral/applying/general-information-about-applying"
+        Link2 = "https://www.lakeheadu.ca/studentcentral/applying/applying-to-lakehead"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_application_steps", tracker, link=Link, link2=Link2)
+        return []
+
+class ActionBachelorsApplication(Action):
+
+    def name(self) -> Text:
+        return "action_bachelors_application_link"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.ouac.on.ca/"
+        Link2 = "https://www.ouac.on.ca/apply/lakeheadugrad/en_CA/user/login"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_bachelors_application_link", tracker, link=Link, link2=Link2)
+        return []
+
+class ActionGraduateApplication(Action):
+
+    def name(self) -> Text:
+        return "action_graduate_application_link"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/admissions/how-to-apply/applying-to-graduate-studies"
+        Link2 = "https://www.ouac.on.ca/apply/lakeheadugrad/en_CA/user/login"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_graduate_application_link", tracker, link=Link, link2=Link2)
+        return []
