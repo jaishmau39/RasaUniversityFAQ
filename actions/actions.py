@@ -254,7 +254,18 @@ class ActionStudyPermit(Action):
         Link2 = "https://www.lakeheadu.ca/international/newly-accepted/immigration"
         str((tracker.latest_message)['text'])
         dispatcher.utter_template("utter_study_permit", tracker, link=Link, link2=Link2)
-        # Link2 = "https://www.lakeheadu.ca/international/newly-accepted/immigration"
-        # str((tracker.latest_message)['text'])
-        # dispatcher.utter_template("utter_study_permit", tracker, link2=Link2)
+        return []
+
+class ActionInternationalServices(Action):
+
+    def name(self) -> Text:
+        return "action_international_student_services"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/international/current/immigration"
+        Link2 = "https://www.lakeheadu.ca/international/current/appointments"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_international_student_services", tracker, link=Link, link2=Link2)
         return []

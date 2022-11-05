@@ -30,7 +30,7 @@ intents:
   - ask_specific_deadline
   - low_average
   - ask_study_permit_info
-
+  - ask_international_student_services
 responses:
   utter_greet:
   - text: "Hey! Hope you are doing well."
@@ -158,7 +158,10 @@ responses:
   - text: "In order to study in Canada as an international student, you will require a study permit. For further information on how to apply for a study permit and other immigration-related topics, click the link below. [ ]{link}. \  \n 
            
            If you are a newly accepted international student. To learn how to submit an application for a study permit, see the link below. [ ]{link2}. \n"
-
+  utter_international_student_services:
+  - text: "International Student Services(ISS) at Lakehead University can advise international students with matters including immigration and finances as well as ease the transition from their home countries to Lakehead University and Canada. To find out more, click the following link. [ ]{link}. \  \n 
+           
+           In-person and online appointments are available through International Student Services. Through the online booking system, students can schedule a meeting with any of Lakehead University's international student advisors. To schedule an appointment, click on the link below. [ ]{link2}. \n"
 entities:
 - latest_event
 #---------
@@ -220,6 +223,7 @@ actions:
 - action_ielts_requirements
 - action_alternate_offers
 - action_study_permit
+- action_international_student_services
 
 session_config:
   session_expiration_time: 60

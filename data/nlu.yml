@@ -92,6 +92,7 @@ nlu:
 
 - intent: check_upcoming_holidays
   examples: |
+    - upcoming holidays
     - like to know the events for this month
     - Show me this month's holidays
     - When is my next holiday
@@ -100,6 +101,7 @@ nlu:
 
 - intent: check_admission_info
   examples: |
+    - next intake
     - Tell me about the next intake
     - When will next intake happen
     - When is the next intake
@@ -133,6 +135,7 @@ nlu:
 
 - intent: request_proff_name
   examples: |
+      - professor contact
       - i want contact information of professor
       - get the contact information of professor
       - Give me contact information of professor 
@@ -206,6 +209,7 @@ nlu:
 #-------------
 - intent: ask_admission_requirements
   examples: |
+      - admission requirements
       - i want to know the requirements for admissions
       - can i know about the admission requirements at lakehead 
       - what are the admission requirements at lakehead
@@ -236,6 +240,7 @@ nlu:
 
 - intent: ask_ielts_requirements
   examples: |
+      - english language proficiency requirements
       - want to know more about english language proficiency
       - need to learn about english language proficiency
       - can i know more about english language proficiency
@@ -244,6 +249,7 @@ nlu:
 #-------------------------------------
 - intent: ask_admission_deadline
   examples: |
+      - admission deadline
       - Can I know about admissions deadlines
       - need admission deadlines
       - give me admission deadlines
@@ -258,6 +264,7 @@ nlu:
 #---------------------
 - intent: low_average
   examples: |
+      - low grades
       - do not meet admission requirements
       - have low average
       - did not achieve the required grade
@@ -267,9 +274,20 @@ nlu:
 #------------------
 - intent: ask_study_permit_info
   examples: |
+      - study permit
       - need to know about study permit
       - what is a student visa
       - how to apply for study permit
       - how to apply for study permit
       - how to get study permit
       - steps for study permit application
+
+- intent: ask_international_student_services
+  examples: |
+      - immigration advisor
+      - advice on immigration
+      - need help from advisor with immigration matters
+      - want to learn more about immigration from advisor
+      - how to get help for immigration
+      - have to speak to an advisor for immigration 
+      - who to speak for immigration advice

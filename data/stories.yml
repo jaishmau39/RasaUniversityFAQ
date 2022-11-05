@@ -181,9 +181,9 @@ stories:
   steps:
     - intent: ask_study_permit_info
     - action: action_study_permit
+
 #--------------------
-#- story: international student services
-#  steps:
-#    - intent: ask_international_student_services
-#    # If you require more information as an international student, contact interntional student services for more information.
-#    - action: action_international_student_services
+- story: international student services
+  steps:
+    - intent: ask_international_student_services
+    - action: action_international_student_services
