@@ -317,3 +317,12 @@ nlu:
       - applying for graduate studies
       - choose graduate
       - select graduate
+
+- intent: give_feedback
+  examples: |
+      - want to give feedback
+      - feedback form
+      - provide feedback
+      - how to give feedback
+      - can i give feeback
+      - feedback form

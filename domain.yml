@@ -34,6 +34,7 @@ intents:
   - apply_to_lakehead
   - undergraduate_application
   - graduate_application
+  - give_feedback
 responses:
   utter_greet:
   - text: "Hey! Hope you are doing well."
@@ -189,6 +190,12 @@ responses:
 
              International students pursuing full time ot part time studies, find the link below. [ ]{link2}. \n"
 
+  utter_ask_feedback:
+    - text: Please enter your first name, last name and feedback below.
+
+  utter_feedback_slots:
+    - text: Thank you for your feedback {user_first_name}!
+
 entities:
 - latest_event
 #---------
@@ -202,6 +209,12 @@ forms:
   proff_name_form:
     required_slots:
       - proff_full_name
+
+  feedback_form:
+    required_slots:
+      - user_first_name
+      - user_last_name
+      - feedback
 
 slots:
   latest_event:
@@ -232,6 +245,33 @@ slots:
     mappings:
     - type: from_entity
       entity: program_intake
+#-----------------
+  user_first_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: feedback_form
+           requested_slot: user_first_name
+
+  user_last_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: feedback_form
+            requested_slot: user_last_name
+
+  feedback:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: feedback_form
+            requested_slot: feedback
 
 actions:
 - action_admission_info
@@ -254,6 +294,7 @@ actions:
 - action_application_steps
 - action_bachelors_application_link
 - action_graduate_application_link
+- action_save_feedback
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

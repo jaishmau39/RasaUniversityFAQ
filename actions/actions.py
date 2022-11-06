@@ -7,13 +7,15 @@ from datetime import date
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
-#
+
+import db
+
+db_conn = db.Repo()
+
 
 # Python program to read an excel file
 
 import pandas as pd
-import numpy as np
-import csv
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -310,4 +312,18 @@ class ActionGraduateApplication(Action):
         Link2 = "https://www.ouac.on.ca/apply/lakeheadugrad/en_CA/user/login"
         str((tracker.latest_message)['text'])
         dispatcher.utter_template("utter_graduate_application_link", tracker, link=Link, link2=Link2)
+        return []
+
+class ActionSaveFeedback(Action):
+
+    def name(self) -> Text:
+        return "action_save_feedback"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        db_conn.insert(tracker.get_slot('user_first_name'), tracker.get_slot('user_last_name'), tracker.get_slot('feedback'))
+        dispatcher.utter_message(response="utter_feedback_slots")
+
         return []

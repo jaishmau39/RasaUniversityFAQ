@@ -168,8 +168,33 @@ stories:
     - intent: ask_study_permit_info
     - action: action_study_permit
 
-#--------------------
+#------------------------
 - story: international student services
   steps:
     - intent: ask_international_student_services
     - action: action_international_student_services
+
+#-------------------
+- story: provide feedback
+  steps:
+  - intent: give_feedback
+  - action: utter_ask_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+  - slot_was_set:
+      - requested_slot: user_first_name
+  - slot_was_set:
+      - user_first_name: Jaishma
+  - slot_was_set:
+      - requested_slot: user_last_name
+  - slot_was_set:
+      - user_last_name: Usha
+  - slot_was_set:
+      - requested_slot: feedback
+  - slot_was_set:
+      - feedback: i want more features
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+  - action: action_save_feedback
+

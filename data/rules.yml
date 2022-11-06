@@ -31,3 +31,19 @@ rules:
   - action: action_search_proff_info
 
 #----
+- rule: Activate form
+  steps:
+  - intent: give_feedback
+  - action: utter_ask_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+
+- rule: Submit form
+  condition:
+  - active_loop: feedback_form
+  steps:
+  - action: feedback_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_save_feedback
