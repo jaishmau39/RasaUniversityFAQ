@@ -36,3 +36,16 @@ class Repo:
       INSERT INTO feedback (FIRST_NAME, LAST_NAME, FEEDBACK) VALUES (?, ?, ?);
     ''', (first_name, last_name, feedback))
     conn.commit()
+
+  @staticmethod
+  def select():
+
+    cur = conn.cursor()
+
+    cur.execute('''
+      SELECT * FROM feedback;
+    ''')
+
+    rows = cur.fetchall()
+
+    return str(rows).strip('[]') if len(rows) > 0 else "No records found"

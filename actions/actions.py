@@ -216,12 +216,16 @@ class ActionAdmissionDeadline(Action):
         program_intake1 = str(program_intake).lower()
         print(program_intake1)
 
-        df5 = pd.read_csv(r'ApplicationDeadlines.csv', encoding='latin1').apply(lambda x: x.astype(str).str.lower())
-        df_deadline = df5[df5["Admission Deadlines"].dropna().str.contains(program_intake1)]['Dates']
-        df_deadline = str(df_deadline.values)
-        # df_name = df_name.replace("'", "")
-        # df_name = df_name.replace("'", "")
-        dispatcher.utter_message(text=df_deadline)
+        try:
+
+            df5 = pd.read_csv(r'ApplicationDeadlines.csv', encoding='latin1').apply(lambda x: x.astype(str).str.lower())
+            df_deadline = df5[df5["Admission Deadlines"].dropna().str.contains(program_intake1)]['Dates']
+            df_deadline = str(df_deadline.values)
+            # df_name = df_name.replace("'", "")
+            # df_name = df_name.replace("'", "")
+            dispatcher.utter_message(text=df_deadline)
+        except Exception as e:
+            print(e)
 
         if(program_intake1 == "audition"):
             Link = "https://www.lakeheadu.ca/studentcentral/applying/application-details-for-media-studies-and-music-applicants"
@@ -324,6 +328,9 @@ class ActionSaveFeedback(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         db_conn.insert(tracker.get_slot('user_first_name'), tracker.get_slot('user_last_name'), tracker.get_slot('feedback'))
+        # rows = db_conn.select()
+        # print(rows)
+
         dispatcher.utter_message(response="utter_feedback_slots")
 
         return []
