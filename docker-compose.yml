@@ -13,7 +13,9 @@ services:
 
   app:
     image: lubot:1.0
-    expose: ['5005']
+#    expose: ['5055']
+    ports:
+      - 5055:5055
 
   lubot-server:
     image: lubot-server:v1
