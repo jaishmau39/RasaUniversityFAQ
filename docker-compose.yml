@@ -13,12 +13,13 @@ services:
 
   app:
     image: lubot:1.0
-#    expose: ['5055']
+    build: ./
     ports:
       - 5055:5055
 
   lubot-server:
     image: lubot-server:v1
+    build: ./lubotweb
     ports:
       - 80:80
 

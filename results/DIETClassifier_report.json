@@ -1,8 +1,8 @@
 {
-  "latest_event": {
-    "precision": 0.8,
-    "recall": 1.0,
-    "f1-score": 0.888888888888889,
+  "program_intake": {
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1-score": 0.8571428571428571,
     "support": 4,
     "confused_with": {}
   },
@@ -14,22 +14,22 @@
     "confused_with": {}
   },
   "micro avg": {
-    "precision": 0.9166666666666666,
-    "recall": 1.0,
-    "f1-score": 0.9565217391304348,
+    "precision": 1.0,
+    "recall": 0.9090909090909091,
+    "f1-score": 0.9523809523809523,
     "support": 11
   },
   "macro avg": {
-    "precision": 0.9,
-    "recall": 1.0,
-    "f1-score": 0.9444444444444444,
+    "precision": 1.0,
+    "recall": 0.875,
+    "f1-score": 0.9285714285714286,
     "support": 11
   },
   "weighted avg": {
-    "precision": 0.9272727272727272,
-    "recall": 1.0,
-    "f1-score": 0.9595959595959596,
+    "precision": 1.0,
+    "recall": 0.9090909090909091,
+    "f1-score": 0.948051948051948,
     "support": 11
   },
-  "accuracy": 0.9976359338061466
+  "accuracy": 0.9985422740524781
 }

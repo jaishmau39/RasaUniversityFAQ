@@ -1,14 +1,21 @@
 [
   {
-    "text": "i want to know the requirements for admissions",
-    "entities": [],
+    "text": "I need admission deadline for undergraduate fall",
+    "entities": [
+      {
+        "start": 30,
+        "end": 48,
+        "value": "undergraduate fall",
+        "entity": "program_intake"
+      }
+    ],
     "predicted_entities": [
       {
-        "entity": "latest_event",
-        "start": 36,
-        "end": 46,
-        "confidence_entity": 0.7721592783927917,
-        "value": "admissions",
+        "entity": "program_intake",
+        "start": 44,
+        "end": 48,
+        "confidence_entity": 0.9913777112960815,
+        "value": "fall",
         "extractor": "DIETClassifier"
       }
     ]
