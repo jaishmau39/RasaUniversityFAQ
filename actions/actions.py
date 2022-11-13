@@ -89,10 +89,10 @@ class ActionAdmissionInfo(Action):
         dispatcher.utter_template("utter_campus_facilities", tracker, link=Link)
         return []
 
-class ActionLatestEvents(Action):
+class ActionSearchFacebook(Action):
 
     def name(self) -> Text:
-        return "action_latest_events"
+        return "action_search_facebook"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -111,7 +111,7 @@ class ActionLatestEvents(Action):
         model = Doc2Vec(tagged_corpus, dm=0, vector_size=200, window=2, min_count=1, epochs=100, hs=1)
 
         # get last user message
-        userMessage = tracker.get_slot("latest_event")
+        userMessage = tracker.get_slot("search_term")
         # userMessage = tracker.latest_message['text']
         # find matching posts
         new_doc = preprocess_string(userMessage)

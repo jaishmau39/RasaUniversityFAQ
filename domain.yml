@@ -35,6 +35,7 @@ intents:
   - undergraduate_application
   - graduate_application
   - give_feedback
+  - search_facebook
 responses:
   utter_greet:
   - text: "Hey! Hope you are doing well."
@@ -64,8 +65,8 @@ responses:
   - text: "Click on the link provided below to learn more about the facilities provided by lakehead university to its students [ ]{link}"
 
 
-#  utter_latest_events:
-#    - text: "What would you like know about Lakehead University today?"
+  utter_facebook_search:
+    - text: "What would you like search about Lakehead University today?"
 
   utter_submit:
     - text: "Okay Thanks!"
@@ -196,6 +197,9 @@ responses:
   utter_feedback_slots:
     - text: Thank you for your feedback {user_first_name}!
 
+  utter_facebook_submit:
+    - text: Looking up Facebook for information on {search_term}!
+
 entities:
 - latest_event
 #---------
@@ -215,6 +219,9 @@ forms:
       - user_first_name
       - user_last_name
       - feedback
+  facebook_search_form:
+    required_slots:
+      - search_term
 
 slots:
   latest_event:
@@ -273,6 +280,15 @@ slots:
           - active_loop: feedback_form
             requested_slot: feedback
 
+  search_term:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: facebook_search_form
+            requested_slot: search_term
+
 actions:
 - action_admission_info
 - display_upcoming_holidays
@@ -295,6 +311,7 @@ actions:
 - action_bachelors_application_link
 - action_graduate_application_link
 - action_save_feedback
+- action_search_facebook
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

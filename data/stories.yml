@@ -64,6 +64,25 @@ stories:
 #    - action: action_latest_events
 
 #--------
+# NOT DONE
+- story: search facebook posts
+  steps:
+  - intent: search_facebook
+  - action: utter_facebook_search
+#  - intent: ask_facebook_search
+  - action: facebook_search_form
+  - active_loop: facebook_search_form
+  - slot_was_set:
+      - requested_slot: search_term
+  - slot_was_set:
+      - search_term: festivals
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+    # looking up on "term"
+  - action: utter_facebook_submit
+  - action: action_search_facebook
+#-----------
 
 - story: search professor information
   steps:
@@ -197,4 +216,77 @@ stories:
       - requested_slot: null
   - active_loop: null
   - action: action_save_feedback
+#---------------------------------------
+# NOT DONE
+
+#- story: post application steps
+#  steps:
+#    - intent: after_applying
+#    # dynamic link
+#    - action: action_keep_tab
+#    # button clicks - admission decision timelines, track application status(myinfo), accept offer of admission(myinfo),
+#    - action: utter_post_admission_step
+#
+#- story: admission decision timelines
+#  steps:
+#    - intent: ask_admission_decision_timeline
+#    - action: utter_admission_decision_timeline
+#
+#- story: track application status
+#  steps:
+#    - intent: ask_track_application_status
+#    # briefly mention admission tracking
+#    - action: utter_admission_tracking
+#
+#- story: track application status
+#  steps:
+#    - intent: ask_track_application_status
+#    # briefly mention admission tracking
+#    - action: utter_admission_tracking
+#    # mention about myinfo
+#    - action: utter_myinfo
+#
+#- story: myinfo
+#  steps:
+#    - intent: ask_myinfo
+#    # mention about myinfo, and dynamic link to password trouble-shooting
+#    - action: action_myinfo
+#
+#- story: accept admission offer
+#  steps:
+#    - intent: ask_accept_admission_offer
+#    - action: utter_admission_decision_timeline
+#    - intent: pay_confirmation_deposit
+#    - action: action_confirmation_deposit
+#
+##-----------------------
+#- story: new student
+#  steps:
+#    - intent: new_student
+#      # new students are responsible for various thing such as paying tuition fee, deferring their admission and housing and accomodations
+#    - action: utter_new_student
+#
+#- story: tuition fee
+#  steps:
+#    - intent: ask_tuition_fee
+#    - action: action_tuition_fee
+#
+#- story: deferring admission
+#  steps:
+#    - intent: ask_defer_admission
+#    - action: action_defer_admission
+#
+#- story: housing and accomodation
+#  steps:
+#    - intent: ask_housing
+#      # add this to campus facilities
+#    - action: action_housing
+#----------------------------------
+
+
+
+
+
+
+
 

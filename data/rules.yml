@@ -47,3 +47,24 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_save_feedback
+
+#-------------------
+- rule: Activate form
+  steps:
+    - intent: search_facebook
+    - action: utter_facebook_search
+#   - intent: ask_facebook_search
+    - action: facebook_search_form
+    - active_loop: facebook_search_form
+
+- rule: Submit form
+  condition:
+    - active_loop: facebook_search_form
+  steps:
+    - action: facebook_search_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: utter_facebook_submit
+    - action: action_search_facebook
+

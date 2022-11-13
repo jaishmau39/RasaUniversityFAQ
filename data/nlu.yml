@@ -125,12 +125,7 @@ nlu:
 #      - can i know the whats happening currently
 #      - i want to know latest information about lakehead
 #
-#- intent: ask_events
-#  examples: |
-#      - can i know the latest events regarding [admissions](latest_event)
-#      - i want to know latest information regarding [residence](latest_event)
-#      - what are the latest events about [admissions](latest_event)
-#      - can i know the latest news about [residence](latest_event)
+
 
 
 - intent: request_proff_name
@@ -326,3 +321,13 @@ nlu:
       - how to give feedback
       - can i give feeback
       - feedback form
+
+- intent: search_facebook
+  examples: |
+      - want to search facebook
+      - need to look at facebook
+      - search facebook posts
+      - lakehead's facebook
+      - social media 
+      - lakehdead social media
+
