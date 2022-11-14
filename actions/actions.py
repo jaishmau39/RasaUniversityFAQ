@@ -18,6 +18,7 @@ db_conn = db.Repo()
 import pandas as pd
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import UserUtteranceReverted
 
 from gensim.parsing.preprocessing import preprocess_string
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
@@ -334,3 +335,109 @@ class ActionSaveFeedback(Action):
         dispatcher.utter_message(response="utter_feedback_slots")
 
         return []
+
+class ActionKeepTab(Action):
+
+    def name(self) -> Text:
+        return "action_keep_tab"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/studentcentral/applying/next-steps"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_keep_tab", tracker, link=Link)
+        return []
+
+class ActionAdmissionDecisionTimeline(Action):
+
+    def name(self) -> Text:
+        return "action_admission_decision_timeline"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/studentcentral/applying/admission-decision-timelines"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_admission_decision_timeline", tracker, link=Link)
+        return []
+
+class ActionmyInfo(Action):
+
+    def name(self) -> Text:
+        return "action_myinfo"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/faculty-and-staff/departments/services/helpdesk/portals/myinfo"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_myInfo", tracker, link=Link)
+        return []
+
+class ActionPasswordTroubleshoot(Action):
+
+    def name(self) -> Text:
+        return "action_password_troubleshoot"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/studentcentral/applying/myinfo-troubleshooting"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_password_troubleshoot", tracker, link=Link)
+        return []
+
+class ActionAcceptAdmission(Action):
+
+    def name(self) -> Text:
+        return "action_accept_admission"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/studentcentral/applying/checklist"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_accept_admission", tracker, link=Link)
+        return []
+
+class ActionConfirmationDeposit(Action):
+
+    def name(self) -> Text:
+        return "action_confirmation_deposit"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/studentcentral/applying/checklist"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_confirmation_deposit", tracker, link=Link)
+        return []
+
+class ActionPaymentOptions(Action):
+
+    def name(self) -> Text:
+        return "action_payment_options"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/students/finances/tuition-fees/paying-fees"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_payment_options", tracker, link=Link)
+        return []
+class ActionDefaultFallback(Action):
+    def name(self) -> Text:
+        return "action_default_fallback"
+
+    def run(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_default", tracker, link=Link)
+
+        return [UserUtteranceReverted()]

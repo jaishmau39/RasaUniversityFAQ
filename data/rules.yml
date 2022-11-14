@@ -68,3 +68,8 @@ rules:
     - action: utter_facebook_submit
     - action: action_search_facebook
 
+- rule: Implementation of the Two-Stage-Fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_two_stage_fallback
+  - active_loop: action_two_stage_fallback

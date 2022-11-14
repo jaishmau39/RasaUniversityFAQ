@@ -64,7 +64,6 @@ stories:
 #    - action: action_latest_events
 
 #--------
-# NOT DONE
 - story: search facebook posts
   steps:
   - intent: search_facebook
@@ -219,46 +218,49 @@ stories:
 #---------------------------------------
 # NOT DONE
 
-#- story: post application steps
-#  steps:
-#    - intent: after_applying
-#    # dynamic link
-#    - action: action_keep_tab
-#    # button clicks - admission decision timelines, track application status(myinfo), accept offer of admission(myinfo),
-#    - action: utter_post_admission_step
-#
-#- story: admission decision timelines
-#  steps:
-#    - intent: ask_admission_decision_timeline
-#    - action: utter_admission_decision_timeline
-#
-#- story: track application status
-#  steps:
-#    - intent: ask_track_application_status
-#    # briefly mention admission tracking
-#    - action: utter_admission_tracking
-#
-#- story: track application status
-#  steps:
-#    - intent: ask_track_application_status
-#    # briefly mention admission tracking
-#    - action: utter_admission_tracking
-#    # mention about myinfo
-#    - action: utter_myinfo
-#
-#- story: myinfo
-#  steps:
-#    - intent: ask_myinfo
-#    # mention about myinfo, and dynamic link to password trouble-shooting
-#    - action: action_myinfo
-#
-#- story: accept admission offer
-#  steps:
-#    - intent: ask_accept_admission_offer
-#    - action: utter_admission_decision_timeline
-#    - intent: pay_confirmation_deposit
-#    - action: action_confirmation_deposit
-#
+- story: post application steps
+  steps:
+    - intent: after_applying
+    # dynamic link
+    - action: action_keep_tab
+    # button clicks - admission decision timelines, track application status(myinfo), accept offer of admission(myinfo),
+    - action: utter_post_admission_step
+
+- story: admission decision timelines
+  steps:
+    - intent: ask_admission_decision_timeline
+    - action: action_admission_decision_timeline
+    - action: utter_post_admission_step_two
+
+- story: track application status
+  steps:
+    - intent: ask_track_application_status
+    - action: utter_admission_tracking
+
+
+- story: myinfo
+  steps:
+    - intent: ask_myinfo
+    - action: action_myinfo
+    - action: utter_post_admission_step_two
+    - intent: password_troubleshoot
+    - action: action_password_troubleshoot
+    - action: utter_post_admission_step_two
+
+- story: accept admission offer
+  steps:
+    - intent: ask_accept_admission_offer
+    - action: action_accept_admission
+    - action: utter_post_admission_step_two
+    - intent: pay_confirmation_deposit
+    - action: action_confirmation_deposit
+    - action: action_payment_options
+    - action: utter_post_admission_step_two
+
+- story: payment methods
+  steps:
+    - intent: payment_options
+    - action: action_payment_options
 ##-----------------------
 #- story: new student
 #  steps:

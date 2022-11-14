@@ -36,6 +36,14 @@ intents:
   - graduate_application
   - give_feedback
   - search_facebook
+  - after_applying
+  - ask_admission_decision_timeline
+  - ask_track_application_status
+  - ask_myinfo
+  - password_troubleshoot
+  - ask_accept_admission_offer
+  - pay_confirmation_deposit
+  - payment_options
 responses:
   utter_greet:
   - text: "Hey! Hope you are doing well."
@@ -192,13 +200,68 @@ responses:
              International students pursuing full time ot part time studies, find the link below. [ ]{link2}. \n"
 
   utter_ask_feedback:
-    - text: Please enter your first name, last name and feedback below.
+    - text: "Please enter your first name, last name and feedback below."
 
   utter_feedback_slots:
-    - text: Thank you for your feedback {user_first_name}!
+    - text: "Thank you for your feedback {user_first_name}!"
 
   utter_facebook_submit:
-    - text: Looking up Facebook for information on {search_term}!
+    - text: "Looking up Facebook for information on {search_term}!"
+
+  utter_keep_tab:
+    - text: "By reading the steps that come next and clicking on the link below, you can get ready for what's to come and discover how to keep your application on track.. [ ]{link}"
+
+  utter_post_admission_step:
+    - text: "A new applicant would have to go through some of these steps. To learn more, simply click below."
+      buttons:
+        - title: "Admission Decision Timelines"
+          payload: '/ask_admission_decision_timeline'
+        - title: "Track Application Status"
+          payload: '/ask_track_application_status'
+        - title: "Accept Offer Admission"
+          payload: '/ask_accept_admission_offer'
+
+  utter_post_admission_step_two:
+    - text: "To learn more, click below."
+      buttons:
+        - title: "Admission Decision Timelines"
+          payload: '/ask_admission_decision_timeline'
+        - title: "Track Application Status"
+          payload: '/ask_track_application_status'
+        - title: "Accept Offer Admission"
+          payload: '/ask_accept_admission_offer'
+
+  utter_admission_decision_timeline:
+    - text: "After submitting a complete application, undergraduate applicants can expect hearing back within 4-6 weeks.\  \n
+             
+             Click on the link to learn more. [ ]{link}. \n"
+
+  utter_admission_tracking:
+    - text: "MyInfo can be used to track the progress of your application."
+      buttons:
+        - title: "myInfo"
+          payload: '/ask_myinfo'
+
+  utter_myInfo:
+    - text: "Click on the link to log into you myInfo account. [ ]{link}."
+
+  utter_password_troubleshoot:
+    - text: "Click on the link below to troubleshoot you myInfo account password. [ ]{link}."
+
+  utter_accept_admission:
+    - text: "The following link will provide you with a complete checklist to accept admission offer. [ ]{link}."
+
+  utter_confirmation_deposit:
+    - text: "Follow the steps in the link below to pay your confirmation deposit. [ ]{link}."
+
+  utter_payment_options:
+    - text: "To learn of the various methods of payment, click on the link below. [ ]{link}."
+
+  utter_ask_rephrase:
+    - text: "I'm sorry, I didn't quite understand that. Could you please rephrase your question?"
+
+  utter_default:
+    - text: "Sorry, I'm afraid I don't know how to answer your question. But, you can visit Lakehead University's official website to learn more. The Lakehead University website link is displayed below. Click to Navigate. [ ]{link}."
 
 entities:
 - latest_event
@@ -312,6 +375,13 @@ actions:
 - action_graduate_application_link
 - action_save_feedback
 - action_search_facebook
+- action_keep_tab
+- action_admission_decision_timeline
+- action_myinfo
+- action_password_troubleshoot
+- action_accept_admission
+- action_confirmation_deposit
+- action_payment_options
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

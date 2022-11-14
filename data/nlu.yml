@@ -331,3 +331,77 @@ nlu:
       - social media 
       - lakehdead social media
 
+- intent: after_applying
+  examples: |
+      - what do i do after applying
+      - post application steps
+      - steps after applying
+      - things to do after applying
+      - what to expect after applying
+
+- intent: ask_admission_decision_timeline
+  examples: |
+      - admission decision
+      - admission decision timeline
+      - can i know admission decision 
+      - when will i know admission decision
+      - application outcome
+      - when can i know application outcome
+      - admission decision outcome
+
+- intent: ask_track_application_status
+  examples: |
+      - application status
+      - track application status
+      - how to know application status
+      - application status
+      - can i know application status
+      - need help tracking application status
+
+- intent: ask_myinfo
+  examples: |
+      - myInfo
+      - what is myInfo
+      - more information about myInfo
+      - how to use myInfo
+      - myInfo link
+      - where is the myInfo link
+      - myInfo login
+  
+- intent: password_troubleshoot
+  examples: |
+      - myInfo password
+      - myInfo troubleshoot
+      - password issues
+      - cannot log into myInfo
+      - help with password
+      - password troubleshoot
+      - problems with myInfo password
+
+- intent: ask_accept_admission_offer
+  examples: |
+      - accept admission offer
+      - how to accept admission offer
+      - need to accept admission offer
+      - admission offer acceptance
+      - steps to take after being offered admission
+      - what can i do to accept admission
+
+- intent: pay_confirmation_deposit
+  examples: |
+      - confirmation deposit
+      - admission confirmation deposit
+      - pay confirmation deposit
+      - how to pay confirmation deposit
+      - need to play confirmation deposit
+      - payment for admission confirmation
+    
+
+- intent: payment_options
+  examples: |
+      - payment methods
+      - modes of payment
+      - how can i pay
+      - what are the various ways of payment
+      - methods of payment
+
