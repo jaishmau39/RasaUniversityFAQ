@@ -19,7 +19,6 @@ import pandas as pd
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import UserUtteranceReverted
-
 from gensim.parsing.preprocessing import preprocess_string
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from gensim.parsing.preprocessing import preprocess_documents
@@ -441,3 +440,5 @@ class ActionDefaultFallback(Action):
         dispatcher.utter_template("utter_default", tracker, link=Link)
 
         return [UserUtteranceReverted()]
+
+

@@ -382,6 +382,7 @@ actions:
 - action_accept_admission
 - action_confirmation_deposit
 - action_payment_options
+- action_default_fallback
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
