@@ -257,32 +257,35 @@ stories:
     - action: action_payment_options
     - action: utter_post_admission_step_two
 
+- story: deferring admission
+  steps:
+    - intent: ask_defer_admission
+    - action: action_defer_admission
+    - action: utter_post_admission_step_two
+
 - story: payment methods
   steps:
     - intent: payment_options
     - action: action_payment_options
 ##-----------------------
-#- story: new student
-#  steps:
-#    - intent: new_student
-#      # new students are responsible for various thing such as paying tuition fee, deferring their admission and housing and accomodations
-#    - action: utter_new_student
-#
-#- story: tuition fee
-#  steps:
-#    - intent: ask_tuition_fee
-#    - action: action_tuition_fee
-#
-#- story: deferring admission
-#  steps:
-#    - intent: ask_defer_admission
-#    - action: action_defer_admission
-#
-#- story: housing and accomodation
-#  steps:
-#    - intent: ask_housing
-#      # add this to campus facilities
-#    - action: action_housing
+- story: new student
+  steps:
+    - intent: new_student
+    - action: utter_new_student
+
+- story: tuition fee
+  steps:
+    - intent: ask_tuition_fee
+    - action: action_tuition_fee
+    - action: utter_new_student
+
+
+- story: housing and accomodation
+  steps:
+    - intent: ask_housing
+      # add this to campus facilities
+    - action: action_housing
+    - action: utter_new_student
 #----------------------------------
 
 

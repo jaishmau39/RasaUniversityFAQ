@@ -44,6 +44,11 @@ intents:
   - ask_accept_admission_offer
   - pay_confirmation_deposit
   - payment_options
+  - ask_defer_admission
+  - new_student
+  - ask_tuition_fee
+  - ask_housing
+
 responses:
   utter_greet:
   - text: "Hey! Hope you are doing well."
@@ -220,6 +225,8 @@ responses:
           payload: '/ask_track_application_status'
         - title: "Accept Offer Admission"
           payload: '/ask_accept_admission_offer'
+        - title: "Defer Admission"
+          payload: '/ask_defer_admission'
 
   utter_post_admission_step_two:
     - text: "To learn more, click below."
@@ -230,6 +237,8 @@ responses:
           payload: '/ask_track_application_status'
         - title: "Accept Offer Admission"
           payload: '/ask_accept_admission_offer'
+        - title: "Defer Admission"
+          payload: '/ask_defer_admission'
 
   utter_admission_decision_timeline:
     - text: "After submitting a complete application, undergraduate applicants can expect hearing back within 4-6 weeks.\  \n
@@ -257,8 +266,25 @@ responses:
   utter_payment_options:
     - text: "To learn of the various methods of payment, click on the link below. [ ]{link}."
 
+  utter_new_student:
+    - text: "To learn more, click below."
+      buttons:
+        - title: "Tuition Fee"
+          payload: '/ask_tuition_fee'
+        - title: "Housing and Accomodation"
+          payload: '/ask_housing'
+
   utter_ask_rephrase:
     - text: "I'm sorry, I didn't quite understand that. Could you please rephrase your question?"
+
+  utter_defer_admission:
+    - text: "To learn more about deferral of admission, click the link below. []{link}."
+
+  utter_tuition_fee:
+    - text: "To learn more about tuition and fees, click the link below. []{link}."
+
+  utter_housing:
+    - text: "To learn more about housing and residence, click the link below. []{link}."
 
   utter_default:
     - text: "Sorry, I'm afraid I don't know how to answer your question. But, you can visit Lakehead University's official website to learn more. The Lakehead University website link is displayed below. Click to Navigate. [ ]{link}."
@@ -383,6 +409,9 @@ actions:
 - action_confirmation_deposit
 - action_payment_options
 - action_default_fallback
+- action_defer_admission
+- action_tuition_fee
+- action_housing
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

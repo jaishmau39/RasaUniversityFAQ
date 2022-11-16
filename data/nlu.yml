@@ -405,3 +405,36 @@ nlu:
       - what are the various ways of payment
       - methods of payment
 
+- intent: ask_defer_admission
+  examples: |
+      - defer admission
+      - how do i defer my admission
+      - can i start my studies at a later date
+      - need to start my program at a later semester
+      - want to defer my admission
+
+- intent: new_student
+  examples: |
+      - new student
+      - i am a new student
+      - resources for new students
+      - things new students need
+      - what does a new student need to know
+
+- intent: ask_tuition_fee
+  examples: |
+      - tuition fee
+      - tuition and fees
+      - i want to learn more about the tuition and fees
+      - can i know about tuition fee
+      - how can i learn more about tuition and fees
+      - need to learn about the fee structure
+
+- intent: ask_housing
+  examples: |
+      - housing and residence
+      - i need more information on housing
+      - want to learn more about residence
+      - new student needs housing information
+      - student needs information on residence
+    

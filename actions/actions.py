@@ -441,4 +441,42 @@ class ActionDefaultFallback(Action):
 
         return [UserUtteranceReverted()]
 
+class ActionDeferAdmission(Action):
 
+    def name(self) -> Text:
+        return "action_defer_admission"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/studentcentral/applying/deferral-of-admission"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_defer_admission", tracker, link=Link)
+        return []
+
+
+class ActionTuitionFee(Action):
+
+    def name(self) -> Text:
+        return "action_tuition_fee"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/admissions/newly-admitted-canadian-students/tuition-fees"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_tuition_fee", tracker, link=Link)
+        return []
+
+class ActionHousing(Action):
+
+    def name(self) -> Text:
+        return "action_housing"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        Link = "https://www.lakeheadu.ca/campus-life/residence-dining"
+        str((tracker.latest_message)['text'])
+        dispatcher.utter_template("utter_housing", tracker, link=Link)
+        return []
