@@ -1,0 +1,20 @@
+version: ‘3.0’
+
+services:
+
+  rasa:
+  #   container_name: “rasa_server”
+     image: rasaserver
+     build:
+       context: backend
+     ports:
+       - 5005:5005
+
+  actionserver:
+     image: actionserver
+     build:
+       context: actions
+     volumes:
+       - ./actions:/app/actions
+     ports:
+       - 5055:5055

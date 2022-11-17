@@ -1,0 +1,297 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: user wants to check upcoming holidays
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: check_upcoming_holidays
+  - action: display_upcoming_holidays
+#  - action: utter_goodbye
+
+- story: user wants to check admission info
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: check_admission_info
+  - action: action_admission_info
+#  - action: utter_goodbye
+
+- story: campus path
+  steps:
+    - intent: campus_facilities
+    - action: action_campus_facilities
+#    - action: utter_what_next
+
+#- story: latest events
+#  steps:
+#    - intent: latest_events
+#    - action: utter_latest_events
+#    - intent: ask_events
+#      entities:
+#      - latest_event: residence
+#    - slot_was_set:
+#      - latest_event: residence
+#    - action: utter_submit
+#    - action: action_latest_events
+
+#--------
+- story: search facebook posts
+  steps:
+  - intent: search_facebook
+  - action: utter_facebook_search
+#  - intent: ask_facebook_search
+  - action: facebook_search_form
+  - active_loop: facebook_search_form
+  - slot_was_set:
+      - requested_slot: search_term
+  - slot_was_set:
+      - search_term: festivals
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+    # looking up on "term"
+  - action: utter_facebook_submit
+  - action: action_search_facebook
+#-----------
+
+- story: search professor information
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_proff_name
+  - action: proff_name_form
+  - active_loop: proff_name_form
+  - slot_was_set:
+      - requested_slot: proff_full_name
+  - slot_was_set:
+      - proff_full_name: Dr. Xing Tan
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+  - action: utter_proff_name_slot_values
+  - action: action_search_proff_info
+
+#------
+- story: search prof name
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_research_prof
+    entities:
+      - topic: artificial intelligence
+  - action: action_find_prof_name
+
+#------------------------
+- story: admission requirements
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_admission_requirements
+    # button clicks - student, program or english proficiency, if student is clicked, redirect to "am_student"
+    - action: utter_specific_admission
+
+
+- story: student and program requirements
+  steps:
+  - intent: ask_student_program_requirements
+  - action: action_admission_requirements
+  - action: utter_specific_admission_two
+
+- story: student type path
+  steps:
+    - intent: am_student
+    - action: utter_student_type
+
+
+- story: program type path
+  steps:
+    - intent: program_type
+    # what program type are you looking for?, redirect to "ask_student_program_requirements"
+    - action: utter_program_type
+
+- story: english proficiency path
+  steps:
+  - intent: ask_ielts_requirements
+  - action: action_ielts_requirements
+  - action: utter_specific_admission_two
+
+#---------------------------------
+
+- story: admission deadline path
+  steps:
+    - intent: ask_admission_deadline
+    - action: utter_admission_deadline
+    - intent: ask_specific_deadline
+      entities:
+        - program_intake: undergraduate fall
+    - action: action_admission_deadline
+    - action: utter_admission_deadline
+
+#-----------------
+- story: alternate offers path
+  steps:
+    - intent: low_average
+    - action: action_alternate_offers
+#---------------
+- story: applying to lakehead path
+  steps:
+    - intent: apply_to_lakehead
+    - action: action_application_steps
+    - action: utter_ask_application_type
+
+- story: undergrad application path
+  steps:
+    - intent: undergraduate_application
+    - action: action_bachelors_application_link
+    - action: utter_ask_application_type
+
+- story: graduate application path
+  steps:
+    - intent: graduate_application
+    - action: action_graduate_application_link
+    - action: utter_ask_application_type
+
+#--------------------
+- story: study permit path
+  steps:
+    - intent: ask_study_permit_info
+    - action: action_study_permit
+
+#------------------------
+- story: international student services
+  steps:
+    - intent: ask_international_student_services
+    - action: action_international_student_services
+
+#-------------------
+- story: provide feedback
+  steps:
+  - intent: give_feedback
+  - action: utter_ask_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+  - slot_was_set:
+      - requested_slot: user_first_name
+  - slot_was_set:
+      - user_first_name: Jaishma
+  - slot_was_set:
+      - requested_slot: user_last_name
+  - slot_was_set:
+      - user_last_name: Usha
+  - slot_was_set:
+      - requested_slot: feedback
+  - slot_was_set:
+      - feedback: i want more features
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+  - action: action_save_feedback
+#---------------------------------------
+# NOT DONE
+
+- story: post application steps
+  steps:
+    - intent: after_applying
+    # dynamic link
+    - action: action_keep_tab
+    # button clicks - admission decision timelines, track application status(myinfo), accept offer of admission(myinfo),
+    - action: utter_post_admission_step
+
+- story: admission decision timelines
+  steps:
+    - intent: ask_admission_decision_timeline
+    - action: action_admission_decision_timeline
+    - action: utter_post_admission_step_two
+
+- story: track application status
+  steps:
+    - intent: ask_track_application_status
+    - action: utter_admission_tracking
+
+
+- story: myinfo
+  steps:
+    - intent: ask_myinfo
+    - action: action_myinfo
+    - action: utter_post_admission_step_two
+    - intent: password_troubleshoot
+    - action: action_password_troubleshoot
+    - action: utter_post_admission_step_two
+
+- story: accept admission offer
+  steps:
+    - intent: ask_accept_admission_offer
+    - action: action_accept_admission
+    - action: utter_post_admission_step_two
+    - intent: pay_confirmation_deposit
+    - action: action_confirmation_deposit
+    - action: action_payment_options
+    - action: utter_post_admission_step_two
+
+- story: deferring admission
+  steps:
+    - intent: ask_defer_admission
+    - action: action_defer_admission
+    - action: utter_post_admission_step_two
+
+- story: payment methods
+  steps:
+    - intent: payment_options
+    - action: action_payment_options
+##-----------------------
+- story: new student
+  steps:
+    - intent: new_student
+    - action: utter_new_student
+
+- story: tuition fee
+  steps:
+    - intent: ask_tuition_fee
+    - action: action_tuition_fee
+    - action: utter_new_student
+
+
+- story: housing and accomodation
+  steps:
+    - intent: ask_housing
+      # add this to campus facilities
+    - action: action_housing
+    - action: utter_new_student
+#----------------------------------
+
+
+
+
+
+
+
+
