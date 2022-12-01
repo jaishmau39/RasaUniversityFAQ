@@ -1,0 +1,211 @@
+version: "3.1"
+nlu:
+- intent: bot_challenge
+  examples: |
+    - am I talking to a bot?
+- intent: ask_for_research_prof
+  examples: |
+    - I need professor for [artificial intelligence](topic)
+- intent: ask_student_program_requirements
+  examples: |
+    - want to know student and program admission requirements
+- intent: program_type
+  examples: |
+    - can i know more about speciality programs
+- intent: ask_specific_deadline
+  examples: |
+    - I need admission deadline for [undergraduate fall](program_intake)
+    - want to know admission deadline for [spring/summer](program_intake)
+- intent: undergraduate_application
+  examples: |
+    - choose undergraduate
+- intent: graduate_application
+  examples: |
+    - applying for graduate studies
+- intent: check_admission_info
+  examples: |
+    - Can you please tell me about the next intake
+- intent: request_proff_name
+  examples: |
+    - get the contact information of professor
+    - show me contact information of professor
+- intent: ask_admission_requirements
+  examples: |
+    - need admission requirements
+- intent: ask_ielts_requirements
+  examples: |
+    - want to learn about english language proficiency
+    - english language proficiency requirements
+- intent: ask_admission_deadline
+  examples: |
+    - need admission deadlines
+- intent: give_feedback
+  examples: |
+    - want to give feedback
+    - provide feedback
+- intent: after_applying
+  examples: |
+    - what to expect after applying
+- intent: ask_track_application_status
+  examples: |
+    - how to know application status
+    - can i know application status
+- intent: payment_options
+  examples: |
+    - modes of payment
+- intent: ask_defer_admission
+  examples: |
+    - need to start my program at a later semester
+    - want to defer my admission
+- intent: new_student
+  examples: |
+    - new student
+- intent: ask_housing
+  examples: |
+    - student needs information on residence
+    - housing and residence
+- intent: affirm
+  examples: |
+    - that sounds good
+    - correct
+- intent: check_upcoming_holidays
+  examples: |
+    - tell me about the upcoming holidays
+    - When is my next holiday
+- intent: am_student
+  examples: |
+    - i am a graduate student
+- intent: low_average
+  examples: |
+    - did not achieve cut-off average
+    - do not meet admission requirements
+- intent: ask_study_permit_info
+  examples: |
+    - how to apply for study permit
+    - study permit
+- intent: search_facebook
+  examples: |
+    - search facebook posts
+    - lakehead's facebook
+- intent: ask_accept_admission_offer
+  examples: |
+    - what can i do to accept admission
+    - need to accept admission offer
+- intent: pay_confirmation_deposit
+  examples: |
+    - admission confirmation deposit
+- intent: ask_tuition_fee
+  examples: |
+    - tuition and fees
+    - tuition fee
+- intent: deny
+  examples: |
+    - never
+    - no
+- intent: campus_facilities
+  examples: |
+    - what is campus life like at lakehead
+    - learn more about residence and housing
+- intent: ask_international_student_services
+  examples: |
+    - have to speak to an advisor for immigration
+    - who to speak for immigration advice
+- intent: ask_admission_decision_timeline
+  examples: |
+    - when will i know admission decision
+    - application outcome
+    - when can i know application outcome
+- intent: ask_myinfo
+  examples: |
+    - how to use myInfo
+    - more information about myInfo
+- intent: password_troubleshoot
+  examples: |
+    - myInfo password
+    - myInfo troubleshoot
+- intent: apply_to_lakehead
+  examples: |
+    - want to start application
+    - want to apply to lakehead
+- intent: goodbye
+  examples: |
+    - see you later
+    - have a nice day
+    - see you around
+- intent: greet
+  examples: |
+    - hey there
+    - goodevening
+    - good evening
+    - good afternoon
+- intent: mood_great
+  examples: |
+    - I am going to save the world
+    - I am amazing
+    - great
+    - perfect
+    - extremely good
+- intent: mood_unhappy
+  examples: |
+    - unhappy
+    - I don't feel very well
+    - I am disappointed
+    - so saad
+- lookup: topic
+  examples: |
+    - networks
+    - computer communications
+    - cryptography
+    - network security
+    - combinatorics
+    - coding theory
+    - Thick Data Analytics
+    - Collaborative Learning
+    - Data Mining
+    - Web Services
+    - smart health
+    - artificial intelligence
+    - Internet of Healthcare Things
+    - Graph-Based Data Analytics
+    - Translational Medical Informatics
+    - Social Data Analytics
+    - Health Informatics
+    - Mathematical and Computational Modelling
+    - Optimization
+    - 5G and beyond wireless communication systems
+    - Internet of Things
+    - IoT
+    - smart health technology
+    - deep learning
+    - edge computing
+    - Robotics
+    - Haptics
+    - big data
+    - Human-Computer Interaction
+    - Tactile Perception
+    - natural language processing,
+    - software maintenance and evolution
+    - mining software repositories
+    - program comprehension
+    - web information retrieval
+    - recommendation systems
+    - Authentication
+    - Machine Interface
+    - cybersecurity
+    - SoC hardware acceleration for application AI
+    - Machine Vision
+    - System-Level Design for AI Application
+    - Edge Computing
+    - Adaptive Computing
+    - HW/SW Co-Design
+    - Abnormal activity recognition
+    - Complexity Analysis
+    - Algorithm Design for AI
+    - Knowledge Representation and Reasoning
+    - Processing Modeling
+    - Numerical Analysis
+    - Large Sparse Linear Systems
+    - Multigrid Methods
+    - Neural Networks
+    - Graph Drawing and Visualization
+    - machine learning

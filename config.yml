@@ -17,7 +17,7 @@ pipeline:
 #   - name: SpacyFeaturizer
 #     pooling: mean
 #--------------------------------------------------------------------------
-
+   - name: Text_Preprocessing.Preprocessing
    - name: WhitespaceTokenizer
 #   - name: RegexFeaturizer
    - name: RegexEntityExtractor
@@ -26,6 +26,7 @@ pipeline:
      use_regexes: True
    - name: LexicalSyntacticFeaturizer
    - name: CountVectorsFeaturizer
+     stop_words: ['a', 'in', 'the','is','are','an','so','to','i']
    - name: CountVectorsFeaturizer
      analyzer: char_wb
      min_ngram: 1
