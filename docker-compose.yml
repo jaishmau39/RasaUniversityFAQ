@@ -10,7 +10,6 @@ services:
     command: run -m models --enable-api --cors "*" -p 5021
 #      - "run -m models --enable-api --cors '*' -p 5021"
 
-
   app:
     image: lubot:1.0
     build: ./

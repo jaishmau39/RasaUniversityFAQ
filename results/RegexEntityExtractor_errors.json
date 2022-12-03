@@ -14,7 +14,7 @@
         "entity": "program_intake",
         "start": 34,
         "end": 47,
-        "confidence_entity": 0.9949192404747009,
+        "confidence_entity": 0.9962891340255737,
         "value": "spring/summer",
         "extractor": "DIETClassifier"
       }

@@ -1,19 +1,9 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
+# This files contains all the custom actions which is needed by some stories.
+
 from datetime import date
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
-
 import db
-
 db_conn = db.Repo()
-
-
-# Python program to read an excel file
 
 import pandas as pd
 from rasa_sdk import Action, Tracker
@@ -23,21 +13,6 @@ from gensim.parsing.preprocessing import preprocess_string
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from gensim.parsing.preprocessing import preprocess_documents
 from facebook_scraper import get_posts
-
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
 
 class ActionAdmissionInfo(Action):
 
@@ -49,7 +24,6 @@ class ActionAdmissionInfo(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         str((tracker.latest_message)['text'])
         dispatcher.utter_message(template="utter_admission_info")
-
         return []
 
 class DisplayUpcomingHolidays(Action):
@@ -60,7 +34,6 @@ class DisplayUpcomingHolidays(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
         today = date.today()
         print("Today's date:", today)
         this_month = today.strftime("%m")
@@ -71,9 +44,7 @@ class DisplayUpcomingHolidays(Action):
         for i in range(current_month_df.shape[0]):
             content = content + str(current_month_df['Date'].values[i])[:10] + '  -  ' + str(
                 current_month_df['Holiday Description'].values[i]) + '\n'
-
         dispatcher.utter_message(text=content)
-
         return []
 
 class ActionAdmissionInfo(Action):
@@ -97,22 +68,18 @@ class ActionSearchFacebook(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # dispatcher.utter_message(text="What cuisine?")
 
         listposts = []
         for post in get_posts("lakeheaduniversity", pages=4):
             listposts.append(post)
-
         df = pd.DataFrame(listposts)
         df.dropna(subset=["text"], inplace=True)
         text_corpus = df['text'].values
         processed_corpus = preprocess_documents(text_corpus)
         tagged_corpus = [TaggedDocument(d, [i]) for i, d in enumerate(processed_corpus)]
         model = Doc2Vec(tagged_corpus, dm=0, vector_size=200, window=2, min_count=1, epochs=100, hs=1)
-
         # get last user message
         userMessage = tracker.get_slot("search_term")
-        # userMessage = tracker.latest_message['text']
         # find matching posts
         new_doc = preprocess_string(userMessage)
         test_doc_vector = model.infer_vector(new_doc)
@@ -124,8 +91,6 @@ class ActionSearchFacebook(Action):
         dispatcher.utter_message(text=botResponse)
         return []
 
-# -------
-
 class ActionSearchProffInfo(Action):
 
     def name(self) -> Text:
@@ -135,9 +100,6 @@ class ActionSearchProffInfo(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-
-
-        #person = self.from_entity(entity="PERSON")
         person = tracker.get_slot("proff_full_name")
         print(person)
         df3 = pd.read_csv(r'cs_faculty.csv', encoding='latin1')
@@ -148,12 +110,8 @@ class ActionSearchProffInfo(Action):
         email_info = email_info.replace("'", "")
         email_info = email_info.replace("'", "")
         print(email_info)
-
         dispatcher.utter_message(text=email_info)
-
-
         return []
-
 
 class ActionFindProffName(Action):
 
@@ -167,15 +125,11 @@ class ActionFindProffName(Action):
         topic1 = str(topic).lower()
         print(topic)
         print(topic1)
-
         df4 = pd.read_csv(r'cs_faculty.csv', encoding='latin1').apply(lambda x: x.astype(str).str.lower())
-        # df_name = df4[df4["research areas"].dropna().str.contains(topic1)]['name'].values
         df_name = df4[df4["research areas"].dropna().str.contains(topic1)]['name']
         df_name = str(df_name.values)
         df_name = df_name.replace("'", "")
         df_name = df_name.replace("'", "")
-
-
         dispatcher.utter_message(text=df_name)
         return []
 
@@ -215,24 +169,17 @@ class ActionAdmissionDeadline(Action):
         program_intake = tracker.get_slot("program_intake")
         program_intake1 = str(program_intake).lower()
         print(program_intake1)
-
         try:
-
             df5 = pd.read_csv(r'ApplicationDeadlines.csv', encoding='latin1').apply(lambda x: x.astype(str).str.lower())
             df_deadline = df5[df5["Admission Deadlines"].dropna().str.contains(program_intake1)]['Dates']
             df_deadline = str(df_deadline.values)
-            # df_name = df_name.replace("'", "")
-            # df_name = df_name.replace("'", "")
             dispatcher.utter_message(text=df_deadline)
         except Exception as e:
             print(e)
-
         if(program_intake1 == "audition"):
             Link = "https://www.lakeheadu.ca/studentcentral/applying/application-details-for-media-studies-and-music-applicants"
             str((tracker.latest_message)['text'])
             dispatcher.utter_template("utter_media_music", tracker, link=Link)
-
-
         return []
 
 class ActionAlternateOffers(Action):
@@ -326,13 +273,8 @@ class ActionSaveFeedback(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
         db_conn.insert(tracker.get_slot('user_first_name'), tracker.get_slot('user_last_name'), tracker.get_slot('feedback'))
-        # rows = db_conn.select()
-        # print(rows)
-
         dispatcher.utter_message(response="utter_feedback_slots")
-
         return []
 
 class ActionKeepTab(Action):
@@ -438,7 +380,6 @@ class ActionDefaultFallback(Action):
         Link = "https://www.lakeheadu.ca/"
         str((tracker.latest_message)['text'])
         dispatcher.utter_template("utter_default", tracker, link=Link)
-
         return [UserUtteranceReverted()]
 
 class ActionDeferAdmission(Action):

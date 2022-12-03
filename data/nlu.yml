@@ -117,17 +117,6 @@ nlu:
       - what is campus life like at lakehead
       - tell me about campus life
 
-
-# latest events
-#- intent: latest_events
-#  examples: |
-#      - what are the latest events at lakehead university
-#      - can i know the whats happening currently
-#      - i want to know latest information about lakehead
-#
-
-
-
 - intent: request_proff_name
   examples: |
       - professor contact
@@ -135,7 +124,7 @@ nlu:
       - get the contact information of professor
       - Give me contact information of professor 
       - show me contact information of professor
-#------
+
 - intent: ask_for_research_prof
   examples: |
    - I need professor for [artificial intelligence](topic)
@@ -201,7 +190,7 @@ nlu:
     - Neural Networks
     - Graph Drawing and Visualization
     - machine learning
-#-------------
+
 - intent: ask_admission_requirements
   examples: |
       - admission requirements
@@ -241,7 +230,6 @@ nlu:
       - can i know more about english language proficiency
       - want to learn about english language proficiency
 
-#-------------------------------------
 - intent: ask_admission_deadline
   examples: |
       - admission deadline
@@ -256,7 +244,7 @@ nlu:
       - can i know admission deadline for [spring/summer](program_intake)
       - give me deadlines for [deferral request]
       - want to know admission deadline for [spring/summer](program_intake)
-#---------------------
+
 - intent: low_average
   examples: |
       - low grades
@@ -266,7 +254,6 @@ nlu:
       - did not achieve cut-off average
       - not enough grades
 
-#------------------
 - intent: ask_study_permit_info
   examples: |
       - study permit

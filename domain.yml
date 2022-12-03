@@ -11,21 +11,14 @@ intents:
   - check_upcoming_holidays
   - check_admission_info
   - campus_facilities
-#  - latest_events
-#  - ask_events
-#-------------
   - request_proff_name
-#-----
   - ask_for_research_prof:
       use_entities: true
-#-------------
   - ask_admission_requirements
   - ask_student_program_requirements
   - am_student
   - ask_ielts_requirements
   - program_type
-#  - ask_student_type
-#---------
   - ask_admission_deadline
   - ask_specific_deadline
   - low_average
@@ -73,10 +66,7 @@ responses:
   - text: "The admission for 2023 will happen in September."
 
   utter_campus_facilities:
-#    - text: "Lakehead University has two main campus locations in Thunder Bay and Orillia.
-#            Select the campus to know more information about it."
   - text: "Click on the link provided below to learn more about the facilities provided by lakehead university to its students [ ]{link}"
-
 
   utter_facebook_search:
     - text: "What would you like search about Lakehead University today?"
@@ -84,10 +74,9 @@ responses:
   utter_submit:
     - text: "Okay Thanks!"
 
-#--------------
   utter_proff_name_slot_values:
   - text: Looking up information on {proff_full_name}!
-#----
+
   utter_admission_requirements:
   - text: "Click on the link provided below to learn about the specific student and program requirements at Lakehead University. [ ]{link}"
 
@@ -147,7 +136,7 @@ responses:
           payload: '/ask_student_program_requirements'
         - title: "English Language Centre"
           payload: '/ask_student_program_requirements'
-#----------------------------------------
+
   utter_admission_deadline:
     - text: "Please select the program and the intake you would like to know the admission deadline for."
       buttons:
@@ -168,10 +157,10 @@ responses:
 
   utter_media_music:
   - text: "If you are a Music or Media, Film, & Communications Applicant, find the link below for more information. [ ]{link}"
-#---------------------------
+
   utter_alternate_offers:
     - text: "If it is determined that you do not meet the program's admission requirements, you will be automatically considered for an alternate program that closely matches your interests. To find out more about Alternate offers and the Academic Support Access Program, see the link below. [ ]{link}"
-#-------------------------
+
   utter_study_permit:
   - text: "In order to study in Canada as an international student, you will require a study permit. For further information on how to apply for a study permit and other immigration-related topics, click the link below. [ ]{link}. \  \n 
            
@@ -291,11 +280,7 @@ responses:
 
 entities:
 - latest_event
-#---------
-#- proff_name
-#----
 - topic
-#------
 - program_intake
 
 forms:
@@ -320,7 +305,6 @@ slots:
     - type: from_entity
       entity: latest_event
 
-#-------------------
   proff_full_name:
     type: text
     influence_conversation: true
@@ -329,19 +313,19 @@ slots:
         conditions:
          - active_loop: proff_name_form
            requested_slot: proff_full_name
-#----
+
   topic:
     type: text
     mappings:
     - type: from_entity
       entity: topic
-#----------
+
   program_intake:
     type: text
     mappings:
     - type: from_entity
       entity: program_intake
-#-----------------
+
   user_first_name:
     type: text
     influence_conversation: true
@@ -382,15 +366,11 @@ actions:
 - action_admission_info
 - display_upcoming_holidays
 - action_campus_facilities
-#- action_latest_events
 - action_search_proff_info
 - utter_greet
 - utter_proff_name_slot_values
-#----
 - action_find_prof_name
-#--------
 - action_admission_requirements
-#------------
 - action_admission_deadline
 - action_ielts_requirements
 - action_alternate_offers

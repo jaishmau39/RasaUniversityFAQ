@@ -1,10 +1,7 @@
 import sqlite3
 
 conn = sqlite3.connect('LU_Bot.db')
-
 print("connected")
-
-
 
 conn.execute('''
       CREATE TABLE IF NOT EXISTS feedback (

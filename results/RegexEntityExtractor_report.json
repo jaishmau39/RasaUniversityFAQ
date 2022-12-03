@@ -1,4 +1,11 @@
 {
+  "topic": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
   "program_intake": {
     "precision": 0.0,
     "recall": 0.0,
@@ -6,30 +13,23 @@
     "support": 1,
     "confused_with": {}
   },
-  "topic": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 5,
-    "confused_with": {}
-  },
   "micro avg": {
     "precision": 1.0,
-    "recall": 0.8333333333333334,
-    "f1-score": 0.9090909090909091,
-    "support": 6
+    "recall": 0.6666666666666666,
+    "f1-score": 0.8,
+    "support": 3
   },
   "macro avg": {
     "precision": 0.5,
     "recall": 0.5,
     "f1-score": 0.5,
-    "support": 6
+    "support": 3
   },
   "weighted avg": {
-    "precision": 0.8333333333333334,
-    "recall": 0.8333333333333334,
-    "f1-score": 0.8333333333333334,
-    "support": 6
+    "precision": 0.6666666666666666,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.6666666666666666,
+    "support": 3
   },
-  "accuracy": 0.998567335243553
+  "accuracy": 0.9968051118210862
 }

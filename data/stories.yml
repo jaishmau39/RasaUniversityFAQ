@@ -35,7 +35,6 @@ stories:
   - action: utter_greet
   - intent: check_upcoming_holidays
   - action: display_upcoming_holidays
-#  - action: utter_goodbye
 
 - story: user wants to check admission info
   steps:
@@ -43,32 +42,16 @@ stories:
   - action: utter_greet
   - intent: check_admission_info
   - action: action_admission_info
-#  - action: utter_goodbye
 
 - story: campus path
   steps:
     - intent: campus_facilities
     - action: action_campus_facilities
-#    - action: utter_what_next
 
-#- story: latest events
-#  steps:
-#    - intent: latest_events
-#    - action: utter_latest_events
-#    - intent: ask_events
-#      entities:
-#      - latest_event: residence
-#    - slot_was_set:
-#      - latest_event: residence
-#    - action: utter_submit
-#    - action: action_latest_events
-
-#--------
 - story: search facebook posts
   steps:
   - intent: search_facebook
   - action: utter_facebook_search
-#  - intent: ask_facebook_search
   - action: facebook_search_form
   - active_loop: facebook_search_form
   - slot_was_set:
@@ -78,10 +61,8 @@ stories:
   - slot_was_set:
       - requested_slot: null
   - active_loop: null
-    # looking up on "term"
   - action: utter_facebook_submit
   - action: action_search_facebook
-#-----------
 
 - story: search professor information
   steps:
@@ -100,7 +81,6 @@ stories:
   - action: utter_proff_name_slot_values
   - action: action_search_proff_info
 
-#------
 - story: search prof name
   steps:
   - intent: greet
@@ -110,15 +90,12 @@ stories:
       - topic: artificial intelligence
   - action: action_find_prof_name
 
-#------------------------
 - story: admission requirements
   steps:
     - intent: greet
     - action: utter_greet
     - intent: ask_admission_requirements
-    # button clicks - student, program or english proficiency, if student is clicked, redirect to "am_student"
     - action: utter_specific_admission
-
 
 - story: student and program requirements
   steps:
@@ -131,11 +108,9 @@ stories:
     - intent: am_student
     - action: utter_student_type
 
-
 - story: program type path
   steps:
     - intent: program_type
-    # what program type are you looking for?, redirect to "ask_student_program_requirements"
     - action: utter_program_type
 
 - story: english proficiency path
@@ -143,8 +118,6 @@ stories:
   - intent: ask_ielts_requirements
   - action: action_ielts_requirements
   - action: utter_specific_admission_two
-
-#---------------------------------
 
 - story: admission deadline path
   steps:
@@ -156,12 +129,11 @@ stories:
     - action: action_admission_deadline
     - action: utter_admission_deadline
 
-#-----------------
 - story: alternate offers path
   steps:
     - intent: low_average
     - action: action_alternate_offers
-#---------------
+
 - story: applying to lakehead path
   steps:
     - intent: apply_to_lakehead
@@ -180,19 +152,16 @@ stories:
     - action: action_graduate_application_link
     - action: utter_ask_application_type
 
-#--------------------
 - story: study permit path
   steps:
     - intent: ask_study_permit_info
     - action: action_study_permit
 
-#------------------------
 - story: international student services
   steps:
     - intent: ask_international_student_services
     - action: action_international_student_services
 
-#-------------------
 - story: provide feedback
   steps:
   - intent: give_feedback
@@ -215,15 +184,11 @@ stories:
       - requested_slot: null
   - active_loop: null
   - action: action_save_feedback
-#---------------------------------------
-# NOT DONE
 
 - story: post application steps
   steps:
     - intent: after_applying
-    # dynamic link
     - action: action_keep_tab
-    # button clicks - admission decision timelines, track application status(myinfo), accept offer of admission(myinfo),
     - action: utter_post_admission_step
 
 - story: admission decision timelines
@@ -236,7 +201,6 @@ stories:
   steps:
     - intent: ask_track_application_status
     - action: utter_admission_tracking
-
 
 - story: myinfo
   steps:
@@ -267,7 +231,7 @@ stories:
   steps:
     - intent: payment_options
     - action: action_payment_options
-##-----------------------
+
 - story: new student
   steps:
     - intent: new_student
@@ -279,14 +243,12 @@ stories:
     - action: action_tuition_fee
     - action: utter_new_student
 
-
 - story: housing and accomodation
   steps:
     - intent: ask_housing
-      # add this to campus facilities
     - action: action_housing
     - action: utter_new_student
-#----------------------------------
+
 
 
 

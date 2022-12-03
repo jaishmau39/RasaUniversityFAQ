@@ -12,7 +12,6 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-#----------------
 - rule: Activate form
   steps:
   - intent: request_proff_name
@@ -30,7 +29,6 @@ rules:
   - action: utter_proff_name_slot_values
   - action: action_search_proff_info
 
-#----
 - rule: Activate form
   steps:
   - intent: give_feedback
@@ -48,12 +46,10 @@ rules:
     - requested_slot: null
   - action: action_save_feedback
 
-#-------------------
 - rule: Activate form
   steps:
     - intent: search_facebook
     - action: utter_facebook_search
-#   - intent: ask_facebook_search
     - action: facebook_search_form
     - active_loop: facebook_search_form
 

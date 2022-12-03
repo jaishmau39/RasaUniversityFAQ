@@ -1,178 +1,58 @@
 [
   {
-    "text": "hey dude",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.1639135628938675
-    }
-  },
-  {
-    "text": "never",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.283382385969162
-    }
-  },
-  {
-    "text": "no way",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "payment_options",
-      "confidence": 0.43436676263809204
-    }
-  },
-  {
-    "text": "super stoked",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.8237195014953613
-    }
-  },
-  {
-    "text": "my day was horrible",
-    "intent": "mood_unhappy",
-    "intent_prediction": {
-      "name": "pay_confirmation_deposit",
-      "confidence": 0.23732303082942963
-    }
-  },
-  {
-    "text": "unhappy",
-    "intent": "mood_unhappy",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.20189157128334045
-    }
-  },
-  {
-    "text": "like to know the events for this month",
-    "intent": "check_upcoming_holidays",
-    "intent_prediction": {
-      "name": "pay_confirmation_deposit",
-      "confidence": 0.15992486476898193
-    }
-  },
-  {
-    "text": "learn more about residence and housing",
-    "intent": "campus_facilities",
-    "intent_prediction": {
-      "name": "ask_housing",
-      "confidence": 0.8962476253509521
-    }
-  },
-  {
-    "text": "good evening",
+    "text": "let's go",
     "intent": "greet",
     "intent_prediction": {
       "name": "mood_great",
-      "confidence": 0.5800410509109497
+      "confidence": 0.289029061794281
     }
   },
   {
-    "text": "cu",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.44738873839378357
-    }
-  },
-  {
-    "text": "good by",
+    "text": "good night",
     "intent": "goodbye",
     "intent_prediction": {
       "name": "mood_great",
-      "confidence": 0.5975832939147949
-    }
-  },
-  {
-    "text": "that sounds good",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.3877504765987396
-    }
-  },
-  {
-    "text": "student support resources",
-    "intent": "campus_facilities",
-    "intent_prediction": {
-      "name": "ask_accept_admission_offer",
-      "confidence": 0.2998822331428528
-    }
-  },
-  {
-    "text": "have low average",
-    "intent": "low_average",
-    "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.4165736734867096
-    }
-  },
-  {
-    "text": "lakehead's facebook",
-    "intent": "search_facebook",
-    "intent_prediction": {
-      "name": "apply_to_lakehead",
-      "confidence": 0.33353257179260254
-    }
-  },
-  {
-    "text": "hi",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.1853865087032318
+      "confidence": 0.2673425078392029
     }
   },
   {
     "text": "have a nice day",
     "intent": "goodbye",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.3641568422317505
+      "name": "new_student",
+      "confidence": 0.15743479132652283
     }
   },
   {
-    "text": "of course",
+    "text": "that sounds good",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.3892865478992462
+      "name": "mood_great",
+      "confidence": 0.3979417085647583
     }
   },
   {
-    "text": "extremely good",
-    "intent": "mood_great",
+    "text": "I don't think so",
+    "intent": "deny",
     "intent_prediction": {
       "name": "mood_unhappy",
-      "confidence": 0.23790153861045837
+      "confidence": 0.4294581711292267
     }
   },
   {
-    "text": "cannot log into myInfo",
-    "intent": "password_troubleshoot",
+    "text": "I am disappointed",
+    "intent": "mood_unhappy",
     "intent_prediction": {
-      "name": "ask_myinfo",
-      "confidence": 0.8827253580093384
+      "name": "ask_defer_admission",
+      "confidence": 0.15639221668243408
     }
   },
   {
-    "text": "new student needs housing information",
-    "intent": "ask_housing",
+    "text": "need final dates for applying",
+    "intent": "ask_admission_deadline",
     "intent_prediction": {
-      "name": "check_upcoming_holidays",
-      "confidence": 0.270151287317276
-    }
-  },
-  {
-    "text": "let's go",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.1611679047346115
+      "name": "am_student",
+      "confidence": 0.2906552851200104
     }
   },
   {
@@ -180,103 +60,47 @@
     "intent": "greet",
     "intent_prediction": {
       "name": "after_applying",
-      "confidence": 0.27098655700683594
+      "confidence": 0.5294989943504333
     }
   },
   {
-    "text": "good night",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.341543585062027
-    }
-  },
-  {
-    "text": "y",
+    "text": "of course",
     "intent": "affirm",
     "intent_prediction": {
       "name": "deny",
-      "confidence": 0.37669920921325684
+      "confidence": 0.2996630370616913
     }
   },
   {
-    "text": "indeed",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.28360381722450256
-    }
-  },
-  {
-    "text": "How can i learn about sports and recreational activities",
-    "intent": "campus_facilities",
-    "intent_prediction": {
-      "name": "ask_myinfo",
-      "confidence": 0.12870736420154572
-    }
-  },
-  {
-    "text": "post application steps",
-    "intent": "after_applying",
-    "intent_prediction": {
-      "name": "apply_to_lakehead",
-      "confidence": 0.37491723895072937
-    }
-  },
-  {
-    "text": "myInfo troubleshoot",
-    "intent": "password_troubleshoot",
-    "intent_prediction": {
-      "name": "ask_myinfo",
-      "confidence": 0.5577505230903625
-    }
-  },
-  {
-    "text": "correct",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.28944844007492065
-    }
-  },
-  {
-    "text": "not really",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.9884888529777527
-    }
-  },
-  {
-    "text": "I am going to save the world",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.15467625856399536
-    }
-  },
-  {
-    "text": "I am disappointed",
+    "text": "unhappy",
     "intent": "mood_unhappy",
     "intent_prediction": {
-      "name": "am_student",
-      "confidence": 0.36477822065353394
+      "name": "greet",
+      "confidence": 0.14183196425437927
     }
   },
   {
-    "text": "When is my next holiday",
-    "intent": "check_upcoming_holidays",
+    "text": "not good",
+    "intent": "mood_unhappy",
     "intent_prediction": {
-      "name": "check_admission_info",
-      "confidence": 0.42916053533554077
+      "name": "mood_great",
+      "confidence": 0.6550746560096741
     }
   },
   {
-    "text": "need final dates for applying",
-    "intent": "ask_admission_deadline",
+    "text": "not very good",
+    "intent": "mood_unhappy",
     "intent_prediction": {
-      "name": "after_applying",
-      "confidence": 0.5740873217582703
+      "name": "mood_great",
+      "confidence": 0.7994486093521118
+    }
+  },
+  {
+    "text": "learn more about residence and housing",
+    "intent": "campus_facilities",
+    "intent_prediction": {
+      "name": "ask_housing",
+      "confidence": 0.9271832704544067
     }
   },
   {
@@ -284,7 +108,135 @@
     "intent": "low_average",
     "intent_prediction": {
       "name": "ask_admission_requirements",
-      "confidence": 0.9369543790817261
+      "confidence": 0.9372876286506653
+    }
+  },
+  {
+    "text": "cannot log into myInfo",
+    "intent": "password_troubleshoot",
+    "intent_prediction": {
+      "name": "ask_myinfo",
+      "confidence": 0.9412239789962769
+    }
+  },
+  {
+    "text": "steps to take after being offered admission",
+    "intent": "ask_accept_admission_offer",
+    "intent_prediction": {
+      "name": "after_applying",
+      "confidence": 0.5746167302131653
+    }
+  },
+  {
+    "text": "moin",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_myinfo",
+      "confidence": 0.1780800074338913
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.533626139163971
+    }
+  },
+  {
+    "text": "extremely good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.5644171833992004
+    }
+  },
+  {
+    "text": "I don't feel very well",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6851116418838501
+    }
+  },
+  {
+    "text": "i am a student applicant",
+    "intent": "am_student",
+    "intent_prediction": {
+      "name": "ask_track_application_status",
+      "confidence": 0.26208484172821045
+    }
+  },
+  {
+    "text": "post application steps",
+    "intent": "after_applying",
+    "intent_prediction": {
+      "name": "apply_to_lakehead",
+      "confidence": 0.3711283504962921
+    }
+  },
+  {
+    "text": "myInfo troubleshoot",
+    "intent": "password_troubleshoot",
+    "intent_prediction": {
+      "name": "ask_myinfo",
+      "confidence": 0.6815662384033203
+    }
+  },
+  {
+    "text": "housing and residence",
+    "intent": "ask_housing",
+    "intent_prediction": {
+      "name": "campus_facilities",
+      "confidence": 0.893016517162323
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.2405978888273239
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.357514888048172
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.7263063192367554
+    }
+  },
+  {
+    "text": "super stoked",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.8074044585227966
+    }
+  },
+  {
+    "text": "so good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.32135725021362305
+    }
+  },
+  {
+    "text": "student support resources",
+    "intent": "campus_facilities",
+    "intent_prediction": {
+      "name": "am_student",
+      "confidence": 0.43969598412513733
     }
   },
   {
@@ -292,23 +244,15 @@
     "intent": "ask_study_permit_info",
     "intent_prediction": {
       "name": "new_student",
-      "confidence": 0.43993619084358215
-    }
-  },
-  {
-    "text": "more information about myInfo",
-    "intent": "ask_myinfo",
-    "intent_prediction": {
-      "name": "ask_housing",
-      "confidence": 0.24565766751766205
+      "confidence": 0.4619460701942444
     }
   },
   {
     "text": "how can i pay",
     "intent": "payment_options",
     "intent_prediction": {
-      "name": "ask_myinfo",
-      "confidence": 0.18791848421096802
+      "name": "ask_ielts_requirements",
+      "confidence": 0.09455173462629318
     }
   },
   {
@@ -316,7 +260,47 @@
     "intent": "ask_housing",
     "intent_prediction": {
       "name": "campus_facilities",
-      "confidence": 0.9460879564285278
+      "confidence": 0.7902348637580872
+    }
+  },
+  {
+    "text": "not really",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.930067777633667
+    }
+  },
+  {
+    "text": "wonderful",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.31996235251426697
+    }
+  },
+  {
+    "text": "my day was horrible",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.22398607432842255
+    }
+  },
+  {
+    "text": "like to know the events for this month",
+    "intent": "check_upcoming_holidays",
+    "intent_prediction": {
+      "name": "new_student",
+      "confidence": 0.3234119117259979
+    }
+  },
+  {
+    "text": "want to start application",
+    "intent": "apply_to_lakehead",
+    "intent_prediction": {
+      "name": "ask_defer_admission",
+      "confidence": 0.4991619288921356
     }
   }
 ]

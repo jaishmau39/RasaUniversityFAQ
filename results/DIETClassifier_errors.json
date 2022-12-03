@@ -14,7 +14,7 @@
         "entity": "program_intake",
         "start": 44,
         "end": 48,
-        "confidence_entity": 0.992328941822052,
+        "confidence_entity": 0.986836314201355,
         "value": "fall",
         "extractor": "DIETClassifier"
       }
