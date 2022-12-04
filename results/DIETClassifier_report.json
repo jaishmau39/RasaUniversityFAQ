@@ -1,16 +1,16 @@
 {
-  "topic": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2,
-    "confused_with": {}
-  },
   "program_intake": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1,
+    "confused_with": {}
+  },
+  "topic": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
     "confused_with": {}
   },
   "micro avg": {

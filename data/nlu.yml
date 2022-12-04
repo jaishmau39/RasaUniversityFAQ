@@ -13,8 +13,8 @@ nlu:
     - hey there
     - let's go
     - hey dude
-    - goodmorning
-    - goodevening
+    - good morning
+    - good evening
     - good afternoon
 
 - intent: goodbye
@@ -112,7 +112,7 @@ nlu:
       - what are the different facilities provided by lakehead
       - what facilities do lakehead campuses have
       - How can i learn about sports and recreational activities
-      - learn more about residence and housing
+      - learn more about campus facilities
       - student support resources
       - what is campus life like at lakehead
       - tell me about campus life

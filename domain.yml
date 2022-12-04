@@ -66,7 +66,7 @@ responses:
   - text: "The admission for 2023 will happen in September."
 
   utter_campus_facilities:
-  - text: "Click on the link provided below to learn more about the facilities provided by lakehead university to its students [ ]{link}"
+  - text: "Click on the link provided below to learn more about the facilities provided by lakehead university to its students {link}"
 
   utter_facebook_search:
     - text: "What would you like search about Lakehead University today?"
@@ -78,10 +78,10 @@ responses:
   - text: Looking up information on {proff_full_name}!
 
   utter_admission_requirements:
-  - text: "Click on the link provided below to learn about the specific student and program requirements at Lakehead University. [ ]{link}"
+  - text: "Click on the link provided below to learn about the specific student and program requirements at Lakehead University. {link}"
 
   utter_ielts_requirements:
-    - text: "Click on the link provided below to learn about English Language Proficiency requirements at Lakehead University. [ ]{link}"
+    - text: "Click on the link provided below to learn about English Language Proficiency requirements at Lakehead University. {link}"
 
   utter_specific_admission:
     - text: "Your admission requirements may differ based on the type of student you are and the program you choose. English language proficiency is also an important factor in your admission to Lakehead University. Please select from the options below to learn more about admissions."
@@ -156,24 +156,24 @@ responses:
           payload: '/ask_specific_deadline{{"program_intake":"audition"}}'
 
   utter_media_music:
-  - text: "If you are a Music or Media, Film, & Communications Applicant, find the link below for more information. [ ]{link}"
+  - text: "If you are a Music or Media, Film, & Communications Applicant, find the link below for more information. {link}"
 
   utter_alternate_offers:
-    - text: "If it is determined that you do not meet the program's admission requirements, you will be automatically considered for an alternate program that closely matches your interests. To find out more about Alternate offers and the Academic Support Access Program, see the link below. [ ]{link}"
+    - text: "If it is determined that you do not meet the program's admission requirements, you will be automatically considered for an alternate program that closely matches your interests. To find out more about Alternate offers and the Academic Support Access Program, see the link below. {link}"
 
   utter_study_permit:
-  - text: "In order to study in Canada as an international student, you will require a study permit. For further information on how to apply for a study permit and other immigration-related topics, click the link below. [ ]{link}. \  \n 
+  - text: "In order to study in Canada as an international student, you will require a study permit. For further information on how to apply for a study permit and other immigration-related topics, click the link below. {link}. \  \n 
            
-           If you are a newly accepted international student. To learn how to submit an application for a study permit, see the link below. [ ]{link2}. \n"
+           If you are a newly accepted international student. To learn how to submit an application for a study permit, see the link below. {link2}. \n"
   utter_international_student_services:
-  - text: "International Student Services(ISS) at Lakehead University can advise international students with matters including immigration and finances as well as ease the transition from their home countries to Lakehead University and Canada. To find out more, click the following link. [ ]{link}. \  \n 
+  - text: "International Student Services(ISS) at Lakehead University can advise international students with matters including immigration and finances as well as ease the transition from their home countries to Lakehead University and Canada. To find out more, click the following link. {link}. \  \n 
            
-           In-person and online appointments are available through International Student Services. Through the online booking system, students can schedule a meeting with any of Lakehead University's international student advisors. To schedule an appointment, click on the link below. [ ]{link2}. \n"
+           In-person and online appointments are available through International Student Services. Through the online booking system, students can schedule a meeting with any of Lakehead University's international student advisors. To schedule an appointment, click on the link below. {link2}. \n"
 
   utter_application_steps:
-    - text: "General steps for the application can be found in the link below. You can find information about transcripts here, along with the mailing address. [ ]{link}. \  \n 
+    - text: "General steps for the application can be found in the link below. You can find information about transcripts here, along with the mailing address. {link}. \  \n 
            
-             Your applicant type, program and duration of study will determine how to apply to Lakehead. [ ]{link2}. \n"
+             Your applicant type, program and duration of study will determine how to apply to Lakehead. {link2}. \n"
 
   utter_ask_application_type:
     - text: "Choose your application type from the options below."
@@ -184,14 +184,14 @@ responses:
           payload: '/graduate_application'
 
   utter_bachelors_application_link:
-    - text: "Full-time undergraduate students, Bachelor of Education and Bachelor of Social Work students, find the link below. [ ]{link}. \  \n 
+    - text: "Full-time undergraduate students, Bachelor of Education and Bachelor of Social Work students, find the link below. {link}. \  \n 
 
-             Returning or part-time undergraduate students and international students pursuing full time ot part time studies, find the link below. [ ]{link2}. \n"
+             Returning or part-time undergraduate students and international students pursuing full time ot part time studies, find the link below. {link2}. \n"
 
   utter_graduate_application_link:
-    - text: "For details on applications, graduate students can click on the following link.. [ ]{link}. \  \n 
+    - text: "For details on applications, graduate students can click on the following link.. {link}. \  \n 
 
-             International students pursuing full time ot part time studies, find the link below. [ ]{link2}. \n"
+             International students pursuing full time ot part time studies, find the link below. {link2}. \n"
 
   utter_ask_feedback:
     - text: "Please enter your first name, last name and feedback below."
@@ -203,7 +203,7 @@ responses:
     - text: "Looking up Facebook for information on {search_term}!"
 
   utter_keep_tab:
-    - text: "By reading the steps that come next and clicking on the link below, you can get ready for what's to come and discover how to keep your application on track.. [ ]{link}"
+    - text: "By reading the steps that come next and clicking on the link below, you can get ready for what's to come and discover how to keep your application on track.. {link}"
 
   utter_post_admission_step:
     - text: "A new applicant would have to go through some of these steps. To learn more, simply click below."
@@ -232,7 +232,7 @@ responses:
   utter_admission_decision_timeline:
     - text: "After submitting a complete application, undergraduate applicants can expect hearing back within 4-6 weeks.\  \n
              
-             Click on the link to learn more. [ ]{link}. \n"
+             Click on the link to learn more. {link}. \n"
 
   utter_admission_tracking:
     - text: "MyInfo can be used to track the progress of your application."
@@ -241,19 +241,19 @@ responses:
           payload: '/ask_myinfo'
 
   utter_myInfo:
-    - text: "Click on the link to log into you myInfo account. [ ]{link}."
+    - text: "Click on the link to log into you myInfo account. {link}."
 
   utter_password_troubleshoot:
-    - text: "Click on the link below to troubleshoot you myInfo account password. [ ]{link}."
+    - text: "Click on the link below to troubleshoot you myInfo account password. {link}."
 
   utter_accept_admission:
-    - text: "The following link will provide you with a complete checklist to accept admission offer. [ ]{link}."
+    - text: "The following link will provide you with a complete checklist to accept admission offer. {link}."
 
   utter_confirmation_deposit:
-    - text: "Follow the steps in the link below to pay your confirmation deposit. [ ]{link}."
+    - text: "Follow the steps in the link below to pay your confirmation deposit. {link}."
 
   utter_payment_options:
-    - text: "To learn of the various methods of payment, click on the link below. [ ]{link}."
+    - text: "To learn of the various methods of payment, click on the link below. {link}."
 
   utter_new_student:
     - text: "To learn more, click below."
@@ -267,16 +267,16 @@ responses:
     - text: "I'm sorry, I didn't quite understand that. Could you please rephrase your question?"
 
   utter_defer_admission:
-    - text: "To learn more about deferral of admission, click the link below. []{link}."
+    - text: "To learn more about deferral of admission, click the link below. {link}."
 
   utter_tuition_fee:
-    - text: "To learn more about tuition and fees, click the link below. []{link}."
+    - text: "To learn more about tuition and fees, click the link below. {link}."
 
   utter_housing:
-    - text: "To learn more about housing and residence, click the link below. []{link}."
+    - text: "To learn more about housing and residence, click the link below. {link}."
 
   utter_default:
-    - text: "Sorry, I'm afraid I don't know how to answer your question. But, you can visit Lakehead University's official website to learn more. The Lakehead University website link is displayed below. Click to Navigate. [ ]{link}."
+    - text: "Sorry, I'm afraid I don't know how to answer your question. But, you can visit Lakehead University's official website to learn more. The Lakehead University website link is displayed below. Click to Navigate. {link}."
 
 entities:
 - latest_event

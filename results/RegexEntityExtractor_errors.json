@@ -1,10 +1,10 @@
 [
   {
-    "text": "can i know admission deadline for spring/summer",
+    "text": "want to know admission deadline for spring/summer",
     "entities": [
       {
-        "start": 34,
-        "end": 47,
+        "start": 36,
+        "end": 49,
         "value": "spring/summer",
         "entity": "program_intake"
       }
@@ -12,9 +12,9 @@
     "predicted_entities": [
       {
         "entity": "program_intake",
-        "start": 34,
-        "end": 47,
-        "confidence_entity": 0.9962891340255737,
+        "start": 36,
+        "end": 49,
+        "confidence_entity": 0.9964242577552795,
         "value": "spring/summer",
         "extractor": "DIETClassifier"
       }

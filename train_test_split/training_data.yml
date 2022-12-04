@@ -3,276 +3,251 @@ nlu:
 - intent: bot_challenge
   examples: |
     - are you a bot?
-    - are you a human?
     - am I talking to a bot?
 - intent: ask_for_research_prof
   examples: |
     - I need professor for [artificial intelligence](topic)
     - help me find professors for [cybersecurity](topic)
-    - show me professors for [big data](topic)
+    - I need help finding professors for [machine learning](topic)
 - intent: ask_student_program_requirements
   examples: |
     - can i know student and program admission requirements at lakehead
     - what are student and program admission requirements
-    - want to know student and program admission requirements
+    - need student and program admission requirements
 - intent: program_type
   examples: |
+    - need to learn about graduate programs
     - can i know more about speciality programs
     - want to learn about undergraduate programs
-    - need to learn about graduate programs
 - intent: ask_specific_deadline
   examples: |
-    - can i know admission deadline for [spring/summer](program_intake)
+    - give me deadlines for [deferral request]
     - I need admission deadline for [undergraduate fall](program_intake)
-    - want to know admission deadline for [spring/summer](program_intake)
+    - can i know admission deadline for [spring/summer](program_intake)
 - intent: undergraduate_application
   examples: |
-    - select undergraduate
-    - choose undergraduate
     - undergraduate application
+    - applying for undergraduate studies
 - intent: graduate_application
   examples: |
-    - applying for graduate studies
-    - select graduate
     - choose graduate
+    - select graduate
+    - applying for graduate studies
 - intent: check_admission_info
   examples: |
+    - Tell me about the next intake
     - Can you please tell me about the next intake
     - When is the next intake
-    - Tell me about the next intake
-    - When will next intake happen
+    - next intake
 - intent: request_proff_name
   examples: |
-    - show me contact information of professor
-    - i want contact information of professor
-    - get the contact information of professor
+    - Give me contact information of professor
     - professor contact
+    - i want contact information of professor
 - intent: ask_admission_requirements
   examples: |
-    - what are the admission requirements at lakehead
-    - admission requirements
-    - i want to know the requirements for admissions
     - can i know about the admission requirements at lakehead
+    - i want to know the requirements for admissions
+    - need admission requirements
+    - admission requirements
 - intent: ask_ielts_requirements
   examples: |
     - need to learn about english language proficiency
     - can i know more about english language proficiency
     - english language proficiency requirements
-    - want to know more about english language proficiency
 - intent: ask_admission_deadline
   examples: |
     - need admission deadlines
-    - give me admission deadlines
-    - Can I know about admissions deadlines
+    - admission deadline
     - need final dates for applying
+    - give me admission deadlines
 - intent: give_feedback
   examples: |
-    - how to give feedback
-    - want to give feedback
     - can i give feeback
+    - provide feedback
     - feedback form
 - intent: after_applying
   examples: |
-    - what do i do after applying
     - what to expect after applying
     - post application steps
+    - steps after applying
     - things to do after applying
 - intent: ask_track_application_status
   examples: |
-    - track application status
     - need help tracking application status
-    - can i know application status
     - application status
+    - how to know application status
 - intent: payment_options
   examples: |
-    - methods of payment
+    - what are the various ways of payment
     - payment methods
     - how can i pay
     - modes of payment
 - intent: ask_defer_admission
   examples: |
-    - want to defer my admission
     - can i start my studies at a later date
-    - how do i defer my admission
     - need to start my program at a later semester
+    - want to defer my admission
 - intent: new_student
   examples: |
     - things new students need
     - resources for new students
-    - what does a new student need to know
+    - i am a new student
     - new student
 - intent: ask_housing
   examples: |
     - student needs information on residence
     - new student needs housing information
-    - want to learn more about residence
     - i need more information on housing
 - intent: affirm
   examples: |
+    - yes
     - of course
     - indeed
-    - correct
-    - yes
     - y
 - intent: check_upcoming_holidays
   examples: |
+    - When is my next holiday
+    - Show me this month's holidays
     - tell me about the upcoming holidays
     - want to know about holidays
-    - Show me this month's holidays
-    - like to know the events for this month
-    - When is my next holiday
+    - upcoming holidays
 - intent: am_student
   examples: |
-    - i am a graduate student
-    - i am an undergraduate student
-    - i am an international student
+    - i am a high school student
     - I am a special student
+    - i am an undergraduate student
     - i am a student applicant
 - intent: low_average
   examples: |
-    - not enough grades
-    - have low average
-    - low grades
-    - did not achieve the required grade
     - do not meet admission requirements
+    - not enough grades
+    - did not achieve the required grade
+    - did not achieve cut-off average
 - intent: ask_study_permit_info
   examples: |
-    - what is a student visa
+    - how to get study permit
+    - steps for study permit application
     - need to know about study permit
     - how to apply for study permit
-    - how to get study permit
-    - study permit
 - intent: search_facebook
   examples: |
+    - need to look at facebook
+    - lakehead's facebook
     - search facebook posts
     - want to search facebook
-    - social media
-    - need to look at facebook
-    - lakehdead social media
 - intent: ask_accept_admission_offer
   examples: |
-    - what can i do to accept admission
     - admission offer acceptance
-    - accept admission offer
     - steps to take after being offered admission
-    - need to accept admission offer
+    - how to accept admission offer
+    - what can i do to accept admission
+    - accept admission offer
 - intent: pay_confirmation_deposit
   examples: |
-    - pay confirmation deposit
-    - how to pay confirmation deposit
-    - need to play confirmation deposit
+    - payment for admission confirmation
+    - confirmation deposit
     - admission confirmation deposit
+    - how to pay confirmation deposit
 - intent: ask_tuition_fee
   examples: |
     - tuition and fees
-    - tuition fee
-    - i want to learn more about the tuition and fees
     - need to learn about the fee structure
+    - tuition fee
     - can i know about tuition fee
 - intent: deny
   examples: |
-    - I don't think so
     - no way
-    - n
-    - never
     - don't like that
+    - I don't think so
+    - never
     - no
 - intent: campus_facilities
   examples: |
-    - what facilities do lakehead campuses have
-    - tell me about campus life
-    - How can i learn about sports and recreational activities
-    - learn more about residence and housing
     - what is campus life like at lakehead
+    - student support resources
+    - How can i learn about sports and recreational activities
+    - what are the different facilities provided by lakehead
+    - learn more about campus facilities
 - intent: ask_international_student_services
   examples: |
-    - who to speak for immigration advice
-    - how to get help for immigration
-    - have to speak to an advisor for immigration
-    - want to learn more about immigration from advisor
-    - advice on immigration
     - need help from advisor with immigration matters
+    - immigration advisor
+    - have to speak to an advisor for immigration
+    - advice on immigration
+    - want to learn more about immigration from advisor
 - intent: ask_admission_decision_timeline
   examples: |
-    - admission decision
-    - application outcome
+    - admission decision timeline
     - when will i know admission decision
+    - application outcome
     - when can i know application outcome
-    - can i know admission decision
-    - admission decision outcome
 - intent: ask_myinfo
   examples: |
     - what is myInfo
-    - more information about myInfo
-    - myInfo
-    - myInfo link
+    - where is the myInfo link
     - myInfo login
+    - how to use myInfo
+    - myInfo link
 - intent: password_troubleshoot
   examples: |
-    - cannot log into myInfo
-    - password issues
-    - password troubleshoot
-    - myInfo password
     - problems with myInfo password
-    - myInfo troubleshoot
+    - help with password
+    - password issues
+    - myInfo password
+    - password troubleshoot
 - intent: apply_to_lakehead
   examples: |
-    - want to start application
     - lakehead university application process
     - looking to apply to lakehead university
     - need to apply to lakehead
-    - apply to lakehead university
-    - steps to apply to lakehead
+    - want to start application
     - want to apply to lakehead
+    - need to begin my application
+    - how to apply to lakehead
 - intent: goodbye
   examples: |
-    - good by
-    - see you around
-    - bye
     - see you later
-    - cu
-    - goodbye
-    - good night
+    - good by
+    - bye bye
     - cee you later
+    - goodbye
+    - bye
+    - see you around
 - intent: greet
   examples: |
-    - hi
-    - good afternoon
-    - hey there
-    - goodmorning
-    - hello there
     - let's go
-    - hey
-    - hello
+    - hey there
     - moin
+    - hi
+    - hello
     - hey dude
+    - good afternoon
+    - hello there
+    - hey
 - intent: mood_great
   examples: |
-    - I am going to save the world
-    - I am feeling very good
     - feeling like a king
-    - great
-    - super stoked
     - so perfect
-    - perfect
-    - I am great
+    - amazing
     - I am amazing
     - wonderful
+    - perfect
+    - so good
     - extremely good
+    - I am feeling very good
     - so so perfect
 - intent: mood_unhappy
   examples: |
-    - super sad
-    - my day was horrible
-    - very sad
-    - not very good
-    - I don't feel very well
-    - so saad
+    - sad
     - I am disappointed
     - so sad
-    - not good
+    - my day was horrible
+    - so saad
+    - I am sad
+    - I don't feel very well
     - unhappy
-    - I'm so sad
+    - not good
 - lookup: topic
   examples: |
     - networks
